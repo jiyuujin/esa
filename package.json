@@ -1,0 +1,13 @@
+{
+  "name": "esa",
+  "author": "yuukit <yuma.kitamura@ponos.co.jp>",
+  "private": true,
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "dependencies": {
+    "dayjs": "^1.8.14",
+    "vuepress": "^1.0.0"
+  }
+}
