@@ -2,10 +2,25 @@
 
 ## Web猫ブログ
 
+[https://webneko.dev/](https://webneko.dev/)
+
+[旧ポータル](https://github.com/jiyuujin/portal)の次期ポータルサイトとして、ブログの制作を開始しました。今となっては v-kansai等コミュニティ運営もその一助として果たしています。
+
 - [Web猫ブログのインフラ周りを少々](https://webneko.dev/posts/deploy-webneko-blog-to-fargate-in-ecs)
 - [devドメインに移行しました](https://webneko.dev/posts/migrated-to-dev-domain-on-webneko-blog)
 
-### Dockerイメージを作成
+### ブログのコンセプト
+
+1. 自分自身の理解を深める
+   - いかに他人に対して説明できるか、という観点を大事にしたい
+2. 語彙力を向上する
+   - 拙い日本語のままで良い筈がありません
+3. 有益なコメント、そしてゆくゆくはバズるかもしれない
+   - 間接的に他の人が喜んでくれればそれで良い
+
+### こうやって構築した
+
+#### Dockerイメージを作成
 
 ECSリポジトリに上げる準備をするため、Dockerfileを作ります。
 
@@ -25,25 +40,19 @@ CMD ["yarn", "run", "start"]
 docker build -t <IMAGE_NAME> .
 ```
 
-### Tagを付与します
+#### Tagを付与します
 
 ```bash
 docker tag <IMAGE_NAME>:latest <ECSリポジトリ>:latest
 ```
 
-### ECSリポジトリにPushします
+#### ECSリポジトリにPushします
 
 ```bash
 docker push <ECSリポジトリ>:latest
 ```
 
-### Fargateで構築
-
-#### クラスタを作成します
-
-クラスター名のみならずコンテナ名やサービス名、タスク名は適当に決めます。
-
-以下順次設定を終えると、タスク(Public IP + Port)で実行確認します。
+クラスタを作成しますがここでクラスタ名のみならず、コンテナ名やサービス名、タスク名も適当に決定します。
 
 1. ECS 左のメニューから `クラスター` を選択
 2. グレーのボタン `今すぐ始める` を選択
@@ -52,7 +61,7 @@ docker push <ECSリポジトリ>:latest
 5. ポートマッピングに `3000` を入力
 6. ロードバランサの種類で `Application Load Balancer` を選択
 
-#### ドメインを設定します
+タスク (PublicIP + Port) で実行確認し終えると、ドメインの設定へ続きます。
 
 1. クラスタ一覧から先ほど作成の `クラスタ` を選択
 2. サービス名で実行されている `サービス` を選択
@@ -63,7 +72,7 @@ docker push <ECSリポジトリ>:latest
 7. リスナーで `HTTP(80)` / `HTTPS(443)` を上記のターゲットグループにリダイレクトする設定を追加
 8. ロードバランサに紐づいているセキュリティグループのインバウンドの `HTTP(80)` / `HTTPS(443)` をアクセス可能にする
 
-#### 常時SSL化も忘れずに！
+※ 常時SSL化も忘れずに！
 
 1. ロードバランサのリスナーにて `HTTPS(443)` にACMで取得したSSL証明書を追加
 2. リスナーの `HTTP(80)` を `HTTPS(443)` に転送するよう設定
@@ -101,3 +110,51 @@ docker push <ECSリポジトリ>:latest
 5. リダイレクトルールを記述
 6. CloudFrontで先ほどメモしたエンドポイントを `Origin Domain Name` に設定
 7. `Alternate Domain Names (CNAMEs)` に旧ドメインを設定
+
+## ねこのえさ
+
+[https://nekohack.app/](https://nekohack.app/)
+
+ブログと違って、タイムライン等で流されないことを利用したドキュメントを残すようにしました。
+
+### こうやって構築した
+
+#### Netlifyにデプロイ
+
+事前に設定ファイルを準備します。
+
+```toml
+[build]
+publish = "docs/.vuepress/dist"
+command = "npm run build"
+```
+
+容易にデプロイできますね！
+
+```bash
+# Build
+vuepress build docs
+```
+
+## 管理画面
+
+[https://admin.nekohack.app/](https://admin.nekohack.app/)
+
+技術情報の蓄積や、Web猫ブログで受け付けている問い合わせ等を目的に制作。先のねこのえさのサブドメインの一つとして、運営しています。
+
+### 設計原則
+
+当初は所謂 Atomic Designを採用 (下記のブログ記事を参照)、現在は Service Entityに分ける方法をとっています。
+
+[Atomic Designでの技術選定の結果、そして今後](https://webneko.dev/posts/doing-my-best-to-atomic-design-on-advent-calendar-2018)
+
+### こうやって構築した
+
+#### Netlifyにデプロイ
+
+ねこのえさ同様、容易にデプロイできますね！
+
+```bash
+# Build
+nuxt build --spa
+```

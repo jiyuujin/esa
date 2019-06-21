@@ -4,7 +4,7 @@ DevOpsとは、 Development (開発) と Operation (運用) を密接に連携�
 
 ## Node.js環境構築
 
-### nodenv
+### nodenvインストール
 
 Node.jsを使うため、 [nodenv](https://github.com/nodenv/nodenv)を採用します。
 

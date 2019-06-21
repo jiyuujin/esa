@@ -12,7 +12,7 @@ module.exports = {
     ],
     [
       'meta',
-      { property: 'og:url', content: 'https://esa.nekodev.app/' },
+      { property: 'og:url', content: 'https://nekohack.app/' },
     ],
     [
       'meta',

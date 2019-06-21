@@ -19,7 +19,7 @@
           <ul>
             <li><a href="/docs">Document</a></li>
             <li><a href="https://webneko.dev/">Blog</a></li>
-            <li><a href="https://nekodev.app/">Portal</a></li>
+            <li><a href="https://admin.nekohack.app/">Admin</a></li>
           </ul>
         </div>
       </div>
