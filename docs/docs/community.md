@@ -5,6 +5,18 @@
 - [v-kansai connpass](https://vuekansai.connpass.com/)
 - [vuejs-jp slack v-kansai channel](https://vuejs-jp.slack.com/)
 
+| # | 開催地 | 参加者 | 申込者 | 登壇者 |
+|:---|:---|:---|:---|:---|
+| #1 | 京都 | 20 | 23 | 6 |
+| #2 | 大阪 | 30 | 73 | 16 |
+| #3 | 京都 | 20 | 25 | 5 |
+| #4 | 大阪 | 30 | 52 | 10 |
+| #5 | 京都 | 20 | 28 | 7 |
+| #6 | 大阪 | 20 | 38 | 7 |
+| #7 | 京都 | 30 | 19 | 8 |
+
+※ 申込者は最終的にキャンセルした者を含む。
+
 ## TypeScript
 
 - [kansai.ts connpass](https://kansaits.connpass.com/)
@@ -12,13 +24,19 @@
 
 ## その他
 
+### リモートLTへの取り組み
+
+v-kansai #7 で沖縄と京都を繋ぎました。
+
+詳しくは、[V-KANSAI #7 (#v_kansai) を開催しました！](https://webneko.dev/posts/enter-the-v-kansai-7-in-kyoto)
+
 ### 支援プログラム
 
 #### Scrapbox勉強会支援プログラム
 
 [Scrapbox勉強会支援プログラム (Nota inc.)](https://scrapbox.io/study-group-support/)
 
-v-kansai #3 #7 で採用しています。
+v-kansai #3 や #7 で採用しています。
 
 詳しくは、[【主催】V-KANSAI VUE.JS/NUXT MEETUP #3を開催しました！](https://webneko.dev/posts/enter-the-third-v-kansai-vue-js-nuxt-meetup-in-kyoto)
 
