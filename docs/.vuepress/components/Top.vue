@@ -10,16 +10,33 @@
         </h2>
         <div class="social-menu">
           <ul>
-            <li><a href="https://twitter.com/jiyuujinlab"><twitter-icon/></a></li>
-            <li><a href="https://github.com/jiyuujin"><github-icon/></a></li>
-            <li><a href="https://gitlab.com/jiyuujin"><gitlab-icon/></a></li>
+            <li>
+              <a href="https://twitter.com/jiyuujinlab">
+                <twitter-icon/>
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com/jiyuujin">
+                <github-icon/>
+              </a>
+            </li>
+            <li>
+              <a href="https://gitlab.com/jiyuujin">
+                <gitlab-icon/>
+              </a>
+            </li>
           </ul>
         </div>
         <div class="top-menu">
-          <ul>
-            <li><a href="/docs">Document</a></li>
-            <li><a href="https://webneko.dev/">Blog</a></li>
-            <li><a href="https://admin.nekohack.app/">Admin</a></li>
+          <ul
+            v-for="link in links"
+            :key="link.name"
+          >
+            <li>
+              <a :href="link.url">
+                {{ link.name }}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -31,6 +48,21 @@
 // https://vue-feather-icons.netlify.com/
 import { TwitterIcon, GithubIcon, GitlabIcon } from 'vue-feather-icons'
 
+const LINKS = [
+  {
+    name: 'Document',
+    url: '/docs'
+  },
+  {
+    name: 'Blog',
+    url: 'https://webneko.dev/'
+  },
+  {
+    name: 'Admin',
+    url: 'https://admin.nekohack.app/'
+  }
+]
+
 export default {
   components: {
     TwitterIcon,
@@ -40,7 +72,8 @@ export default {
   data() {
     return {
       siteTitle: 'ねこのえさ',
-      footer: 'Created © 2019 jiyuujin LAB. All Rights Reserved.'
+      footer: 'Created © 2019 jiyuujin LAB. All Rights Reserved.',
+      links: LINKS
     }
   }
 }

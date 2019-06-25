@@ -2,7 +2,7 @@
 
 DevOpsとは、 Development (開発) と Operation (運用) を密接に連携することで、柔軟かつスピーディに開発を進めること。
 
-## Node.js環境構築
+## フロントエンド環境構築
 
 ### nodenvインストール
 
@@ -24,7 +24,7 @@ export PATH="$HOME/.nodenv/bin:$PATH"
 eval "$(nodenv init -)"
 ```
 
-### Node.jsインストール
+#### Node.jsインストール
 
 インストールできるバージョンを事前に確認、実際にインストールします。
 
@@ -38,9 +38,10 @@ node -v
 
 インストールに時間がかかります、これは待つしか無さそう。。
 
-## PHP環境構築
+## サーバサイド環境構築
 
-[【技術メモ】PHP、Rubyを使って開発を遂行するための構築手順書](https://webneko.dev/posts/the-guide-in-development-of-script-languages)
+- [【技術メモ】PHP、Rubyを使って開発を遂行するための構築手順書](https://webneko.dev/posts/the-guide-in-development-of-script-languages)
+- [【技術メモ】Python3を使って Discord Botを作成するための構築手順書](https://webneko.dev/posts/the-guide-in-development-of-discord-bot-by-python3)
 
 ### phpenvインストール
 
@@ -62,7 +63,7 @@ export PATH="$HOME/.phpenv/bin:$PATH"
 eval "$(phpenv init -)"
 ```
 
-### PHPインストール
+#### PHPインストール
 
 ::: warning 色々と入れないとダメみたいで辛い。。
 PHPをビルドするため必要なパッケージをインストールします。
@@ -120,7 +121,6 @@ brew install automake
 ```
 :::
 
-
 インストールできるバージョンを事前に確認、実際にインストールします。
 
 ```bash
@@ -133,7 +133,7 @@ php -v
 
 インストールに時間がかかります、これは待つしか無さそう。。
 
-### Composerインストール
+#### Composerインストール
 
 作業ディレクトリに移動します (私の場合はホームディレクトリより projectを作成しています)
 
@@ -141,10 +141,6 @@ php -v
 git clone https://github.com/ngyuki/phpenv-composer.git ~/.phpenv/plugins/phpenv-composer
 composer --version
 ```
-
-## Python環境構築
-
-[【技術メモ】Python3を使って Discord Botを作成するための構築手順書](https://webneko.dev/posts/the-guide-in-development-of-discord-bot-by-python3)
 
 ### pyenvインストール
 
