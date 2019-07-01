@@ -6,22 +6,42 @@ DevOpsとは、 Development (開発) と Operation (運用) を密接に連携�
 
 ### nodenvインストール
 
+:::tip nodenvを採用する主なメリット
+`.node-version` を指定しておくと勝手にそのバージョンを使用、自動でバージョンを切り替える。
+
+```bash
+v10.14.2
+```
+:::
+
 Node.jsを使うため、 [nodenv](https://github.com/nodenv/nodenv)を採用します。
 
 ```bash
 # nodenv
 git clone https://github.com/nodenv/nodenv.git ~/.nodenv
 cd ~/.nodenv && src/configure && make -C src
-
-# node-build
-git clone https://github.com/nodenv/node-build.git $(nodenv root)/plugins/node-build
 ```
 
-.bash_profileで nodenvを使えるよう設定します。
+`.bash_profile` で nodenv を使えるよう設定します。
 
 ```bash
-export PATH="$HOME/.nodenv/bin:$PATH"
-eval "$(nodenv init -)"
+# .bash_profile が存在しない場合
+touch ~/.bash_profile
+
+echo export PATH="$HOME/.nodenv/bin:$PATH" >> ~/.bash_profile
+echo eval "$(nodenv init -)" >> ~/.bash_profile
+source ~/.bash_profile
+```
+
+ターミナルのセッションを一度、切りましょう。 `.bash_profile` はログイン後起動されるとのこと、反映されないので注意すること。
+
+#### node-buildインストール
+
+ついでに node-buildをインストールします。
+
+```bash
+# node-build
+git clone https://github.com/nodenv/node-build.git $(nodenv root)/plugins/node-build
 ```
 
 #### Node.jsインストール
@@ -37,6 +57,13 @@ node -v
 ```
 
 インストールに時間がかかります、これは待つしか無さそう。。
+
+```bash
+# npm
+npm -v
+```
+
+プロジェクトリポジトリなどで `npm` を利用できるか確認しましょう。
 
 ## サーバサイド環境構築
 
