@@ -18,6 +18,31 @@
 3. 有益なコメント、そしてゆくゆくはバズるかもしれない
    - 間接的に他の人が喜んでくれればそれで良い
 
+:::tip 趣味用と切り分けたそらんちゅブログ
+[https://aviation.nekohack.app/](https://aviation.nekohack.app/)
+
+趣味ブログは、ソースコードを [Gitlab](https://gitlab.com/jiyuujin/soranchu-blog-ver2)で管理、[ねこのえさ](https://nekohack.app/)のサブドメインの一つとして、運営しています。
+
+### こうやって構築した
+
+#### Netlifyにデプロイ
+
+事前に設定ファイルを準備します。
+
+```toml
+[build]
+publish = "public"
+command = "gatsby build"
+```
+
+容易にデプロイできますね！
+
+```bash
+# Build
+gatsby build
+```
+:::
+
 ### こうやって構築した
 
 #### Dockerイメージを作成
@@ -140,13 +165,57 @@ vuepress build docs
 
 [https://admin.nekohack.app/](https://admin.nekohack.app/)
 
-技術情報の蓄積や、Web猫ブログで受け付けている問い合わせ等を目的に制作。先のねこのえさのサブドメインの一つとして、運営しています。
+技術情報の蓄積や、Web猫ブログで受け付けている問い合わせ等を目的に制作。[ねこのえさ](https://nekohack.app/)のサブドメインの一つとして、運営しています。
 
 ### 設計原則
 
 当初は所謂 Atomic Designを採用 (下記のブログ記事を参照)、現在は Service Entityに分ける方法をとっています。
 
 [Atomic Designでの技術選定の結果、そして今後](https://webneko.dev/posts/doing-my-best-to-atomic-design-on-advent-calendar-2018)
+
+#### Firestore
+
+[Firebase Console](https://console.firebase.google.com/)
+
+`contact` コレクションを作ります。
+
+```ts
+const adminFirestore: any = Firestore.firestore();
+
+const contactsCollection: any = adminFirestore.collection('contacts')
+
+await contactsCollection.add({
+  'time': dayjs().format(),
+  'title': this.form.title,
+  'category': this.getCategory(),
+  'email': this.form.email,
+  'description': this.form.description
+});
+```
+
+その他必要に応じて、コレクションを作ります。
+
+#### Graphcool
+
+[Graphcool Console](https://console.graph.cool/Activity/schema)
+
+`Work` スキーマを作ります。
+
+```graphql
+query {
+  allWorks(orderBy: startAt_DESC) {
+    id
+    company
+    startAt
+    endAt
+    title
+    description
+  }
+  # 必要に応じて随時追加
+}
+```
+
+その他必要に応じて、スキーマを作ります。
 
 ### こうやって構築した
 
