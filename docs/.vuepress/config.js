@@ -39,6 +39,10 @@ module.exports = {
         text: 'ドキュメント',
         link: '/docs/',
       },
+      {
+        text: 'Vue',
+        link: '/vue/',
+      },
     ],
     // sidebarDepth: 3,
     sidebar: {
@@ -53,7 +57,23 @@ module.exports = {
             'community'
           ]
         }
+      ],
+      '/vue/': [
+        {
+          title: 'Vue',
+          collapsable: false,
+          children: [
+            ''
+          ]
+        }
       ]
+    }
+  },
+  configureWebpack: {
+    resolve: {
+      alias: {
+        '@': 'docs/.vuepress/public'
+      }
     }
   }
 };
