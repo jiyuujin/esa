@@ -18,9 +18,7 @@
 3. 有益なコメント、そしてゆくゆくはバズるかもしれない
    - 間接的に他の人が喜んでくれればそれで良い
 
-:::tip 趣味用と切り分けたそらんちゅブログ
-[https://aviation.nekohack.app/](https://aviation.nekohack.app/)
-
+:::tip 趣味用と切り分けました (メンバー限定コンテンツ)
 趣味ブログは、ソースコードを [Gitlab](https://gitlab.com/jiyuujin/soranchu-blog-ver2)で管理、[ねこのえさ](https://nekohack.app/)のサブドメインの一つとして、運営しています。
 
 ### こうやって構築した
