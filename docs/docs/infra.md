@@ -21,8 +21,6 @@
 :::tip 趣味用と切り分けました (メンバー限定コンテンツ)
 趣味ブログは、ソースコードを [Gitlab](https://gitlab.com/jiyuujin/soranchu-blog-ver2)で管理、[ねこのえさ](https://nekohack.app/)のサブドメインの一つとして、運営しています。
 
-### こうやって構築した
-
 #### Netlifyにデプロイ
 
 事前に設定ファイル (.toml) を準備します。

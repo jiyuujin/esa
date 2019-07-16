@@ -44,7 +44,7 @@ module.exports = {
         link: '/vue/',
       },
     ],
-    // sidebarDepth: 3,
+    sidebarDepth: 3,
     sidebar: {
       '/docs/': [
         {
