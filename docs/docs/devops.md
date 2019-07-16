@@ -198,10 +198,52 @@ pyenv versions
 python -v
 ```
 
-#### zlibエラーで pyenvのインストールに失敗した
+#### zlibエラーでpyenvのインストールに失敗した
 
 xcode-selectの最新バージョンに Mojave用の MacOS SDK headerがデフォルトで入っていないことが原因。マニュアルで以下の通りインストールする必要あります。
 
 ```bash
 sudo installer -pkg /Library/Developer/CommandLineTools/Packages/macOS_SDK_headers_for_macOS_10.14.pkg -target /
+```
+
+## インフラ周り
+
+### LaravelでDockerを使う
+
+前提として、 [Laravel](http://laravel.jp/)の環境構築を行います。 Yamlで各サービスを作成した後、 docker-composeで使うコンテナは dockerディレクトリに設定。 Nginxや PHPに加え DBマイグレーションについても必要であればコンテナ名を適宜入力して実行、ローカル Webサーバを起動します。
+
+```bash
+# DB Migration
+docker exec -it <CONTAINER_NAME> php artisan migrate
+```
+
+HTTPS化しないため、容易に Nginxを設定できます。
+
+```
+FROM nginx:latest
+COPY ./default.conf /etc/nginx/conf.d/default.conf
+```
+
+随時MySQL設定も盛り込みつつ、今回は `PHP 7.2.8` を使います。
+
+```
+FROM php:7.2.8-fpm
+RUN docker-php-ext-install pdo_mysql mysqli mbstring
+WORKDIR /src
+```
+
+#### 80番ポートが占有されていると言われたら。。？
+
+既に同じ 80番ポートが使われていないか確認します。
+
+```bash
+# ポートの使用確認
+sudo lsof -i -P | grep "LISTEN"
+```
+
+80番ポートを一旦停止して解決、 `TCP*:80` (LISTEN) が動作していないか確認します。
+
+```bash
+# ポートの停止
+sudo apachectl stop
 ```
