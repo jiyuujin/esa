@@ -40,6 +40,9 @@ vue create vue-cli-sample
 ├── docker-compose.yml
 ├── docker-compose.yml.example
 ├── frontend
+│   ├── public
+│   ├── src
+│   ├── tests
 ├── jest.config.js
 ├── node_modules
 ├── package-lock.json
