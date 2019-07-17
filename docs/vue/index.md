@@ -5,12 +5,14 @@
 :::warning vue-cli@v3 をインストールします。
 間違っても `v2` をインストールしないよう、注意してください。
 
-前提として、 Node.js `v8.9.0` 以上であることを確認してください。これにより、 `vue` コマンドを使えるようになります。
+前提として、 Node.js `v8.9.0` 以上であることを確認してください。
 
 ```bash
 # @vue/cli
 npm i -g @vue/cli
 ```
+
+これにより、 `vue` コマンドを使えるようになります。
 :::
 
 具体的なインストール方法は割愛します。プロジェクト作成は、[Vue CLI Installation](https://cli.vuejs.org/guide/installation.html)をご確認ください。
@@ -274,7 +276,7 @@ yarn add vue-chartjs chart.js @types/chart.js
 
 基本的に下準備はこれだけ。
 
-### Componentでこうやって使う
+#### Componentでこうやって使う
 
 詳しくは以下リンクをご確認いただければ、と思います。
 
