@@ -2,8 +2,10 @@
 
 ## Vue CLI
 
-:::warning 今回は v3 を使います！
-事前に `@vue/cli` をインストールしておきましょう。
+:::warning vue-cli@v3 をインストールします。
+間違っても `v2` をインストールしないよう、注意してください。
+
+前提として、 Node.js `v8.9.0` 以上であることを確認してください。これにより、 `vue` コマンドを使えるようになります。
 
 ```bash
 # @vue/cli
@@ -18,6 +20,33 @@ npm i -g @vue/cli
 vue create vue-cli-sample
 ```
 
+今回 TypeScriptを使うので `Manually select features` を選択します。オプションは後からでも追加できるので、とりあえず適当に入れておきましょう。
+
+インストール完了後、以下のように展開されるはずです。
+
+```
+.
+├── .browserslistrc
+├── .dockerignore
+├── .editorconfig
+├── .eslintrc.js
+├── .git
+├── .gitignore
+├── .idea
+├── README.md
+├── babel.config.js
+├── docker-compose.yml
+├── docker-compose.yml.example
+├── frontend
+├── jest.config.js
+├── node_modules
+├── package-lock.json
+├── package.json
+├── postcss.config.js
+├── tsconfig.json
+└── vue.config.js
+```
+
 ### Netlifyにデプロイ
 
 簡単に動作確認する場合、Netlifyを使うのがオススメ。
@@ -26,7 +55,7 @@ vue create vue-cli-sample
 
 ```toml
 [build]
-publish = "docs/.vuepress/dist"
+publish = "dist"
 command = "npm run build"
 ```
 
@@ -34,7 +63,7 @@ command = "npm run build"
 
 ```bash
 # Build
-vuepress build docs
+vue-cli-service build
 ```
 
 #### Netlify Consoleより操作
@@ -218,6 +247,68 @@ command = "npm run build"
 ```bash
 # Build
 nuxt build
+```
+
+## Packages
+
+### vue-chartjs
+
+前提として [vue-cli@v3](https://cli.vuejs.org/) で進めます。とはいえ、 [nuxt](https://ja.nuxtjs.org/) でも基本的に変わりませんので、広く見ていただければ。🙏
+
+```bash
+# 型定義を含めインストール
+yarn add vue-chartjs chart.js @types/chart.js
+```
+
+適宜 tsconfig.json の `compilerOptions` に追加します。
+
+```json
+{
+  "compilerOptions": {
+    "types": [
+      "@types/chart.js"
+    ]
+  }
+}
+```
+
+基本的に下準備はこれだけ。
+
+### Componentでこうやって使う
+
+詳しくは以下リンクをご確認いただければ、と思います。
+
+<a class="link-preview" href="https://vue-chartjs.org/guide/#example">vue-chartjsを使ったサンプルなど</a>
+
+基本的には `datasets` と `options` を渡してあげることで描画してくれる仕組みです。
+
+```ts
+import Vue from 'vue'
+import ChartData from 'chart.js'
+import { HorizontalBar } from 'vue-chartjs'
+
+const chartData: ChartData.ChartData = {
+    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+    datasets: [
+        {
+            label: 'Data One',
+            backgroundColor: '#42b883',
+            data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
+        }
+    ]
+}
+
+const chartOptions: ChartData.ChartOptions = {
+    responsive: true,
+    maintainAspectRatio: false
+}
+
+export default Vue.extend({
+    extends: HorizontalBar,
+    mounted () {
+        this.renderChart(chartData, chartOptions)
+    }
+})
 ```
 
 ## 書籍
