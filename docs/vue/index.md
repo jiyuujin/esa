@@ -37,6 +37,7 @@ vue create vue-cli-sample
 ├── .idea
 ├── README.md
 ├── babel.config.js
+├── dist
 ├── docker-compose.yml
 ├── docker-compose.yml.example
 ├── frontend
@@ -93,11 +94,11 @@ module.exports = {
 
 ```js
 publicPath: '/',
-outputDir: 'webroot/dist/',
+outputDir: 'dist/',
 pages: {
     index: {
-        entry: './front/src/main.js',
-        template: './front/public/index.html',
+        entry: './frontend/src/main.js',
+        template: './frontend/public/index.html',
         filename: 'index.html',
         chunks: [
             'chunk-vendors',
