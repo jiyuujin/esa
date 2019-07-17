@@ -268,6 +268,8 @@ yarn add vue-router
 
 ちなみに一々、ルーティングを書かなくても Nuxtと同じようにルーティングを自動化する [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-routing) もありますが、この場では割愛します。
 
+#### サーバサイドでこうやって使う
+
 Laravelの場合 `.blade.php` (Cakephpの場合 `.tpl` など) に `<router-view></router-view>` を設定します。
 
 ```php
