@@ -43,6 +43,10 @@ module.exports = {
         text: 'Vue',
         link: '/vue/',
       },
+      {
+        text: 'Style',
+        link: '/style/',
+      }
     ],
     sidebarDepth: 3,
     sidebar: {
@@ -61,6 +65,15 @@ module.exports = {
       '/vue/': [
         {
           title: 'Vue',
+          collapsable: false,
+          children: [
+            ''
+          ]
+        }
+      ],
+      '/style/': [
+        {
+          title: 'Style',
           collapsable: false,
           children: [
             ''
