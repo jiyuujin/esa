@@ -256,6 +256,51 @@ nuxt build
 
 ## Packages
 
+### vue-router
+
+[vue-router](https://router.vuejs.org/ja/installation.html) をインストールします。ただし [Nuxt](https://ja.nuxtjs.org/) では既に入っています。
+
+```bash
+# vue-router
+yarn add vue-router
+```
+
+ちなみに一々、ルーティングを書かなくても Nuxtと同じようにルーティングを自動化する [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-routing) もありますが、この場では割愛します。
+
+Laravelの場合 `.blade.php` (Cakephpの場合 `.tpl` など) に `<router-view></router-view>` を設定します。
+
+```php
+<div id="app">
+    <router-view></router-view>
+</div>
+```
+
+このように `<router-view></router-view>` を設定したことで、 src/main.ts でサーバサイド用ルーティングに合わせて、フロントで作成した Componentを表示することができます。また動的ルーティングは、 `:id` 等のように `path` の後ろに設定すると良いです。
+
+```ts
+// Componentをインポート
+import HelloWorld from './components/HelloWorld.vue'
+import ProductEdit from './components/product/Edit.vue'
+
+import App from './App.vue'
+
+// ルーティングリストを作成
+const routes = [
+    { path: '/test', component: HelloWorld },
+    { path: '/product/edit/:id', component: ProductEdit },
+];
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: routes
+});
+
+const app = new Vue({
+    render: h => h(App),
+    router
+}).$mount('#app');
+```
+
 ### vue-chartjs
 
 前提として [vue-cli@v3](https://cli.vuejs.org/) で進めます。とはいえ、 [nuxt](https://ja.nuxtjs.org/) でも基本的に変わりませんので、広く見ていただければ。🙏
