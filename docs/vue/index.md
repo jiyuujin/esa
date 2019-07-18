@@ -80,21 +80,26 @@ Github等のアカウントを所有していれば OK [Netlify](https://www.net
 
 ### Gitlab-CIを回す
 
-[Gitlab-CI](https://docs.gitlab.com/ee/ci/) では [Node Image](https://hub.docker.com/_/node/) を前提にして、ステージを Lint / Deploy に分けて対応します。
+[Gitlab-CI](https://docs.gitlab.com/ee/ci/) では [Node Image](https://hub.docker.com/_/node/) を前提にして、ステージを Lint / UnitTest / Deploy に分けて対応します。
 
 ```yaml
 image: node:latest
 
 stages:
-  - lint
-  - deploy
+  - Lint
+  - UnitTest
+  - Deploy
 ```
+
+少しハマったこととして package-lock.json等の `.lock` ファイルを .gitignoreに入れないよう注意します。
+
+#### Lintを設定する
 
 TypeScriptを使っているので、欠かさず `@typescript-eslint` をインストール、チェックを進めます。
 
 ```yaml
 eslint:
-  stage: lint
+  stage: Lint
   script:
     - |
       npm install eslint \
@@ -105,11 +110,25 @@ eslint:
 
 ```
 
-Webアプリケーションのデプロイですが、詳しくは [vue-cli@v3](https://cli.vuejs.org/guide/installation.html) | [Gitlab-CIへのデプロイ](https://cli.vuejs.org/guide/deployment.html#gitlab-pages) をご確認ください。
+#### Unitテストを設定する
+
+`npm run test:unit` を叩くよう設定します。
+
+```yaml
+unit test:
+  stage: UnitTest
+  script:
+    - npm install --progress=false
+    - npm run test:unit
+```
+
+#### Webアプリケーションをデプロイする
+
+Webアプリケーションのデプロイは [vue-cli@v3](https://cli.vuejs.org/guide/installation.html) | [Gitlab-CIへのデプロイ](https://cli.vuejs.org/guide/deployment.html#gitlab-pages) をご確認ください。
 
 ```yaml
 pages:
-  stage: deploy
+  stage: Deploy
   script:
     - npm ci
     - npm run build
@@ -121,8 +140,6 @@ pages:
   only:
     - master
 ```
-
-少しハマったこととして package-lock.json等の `.lock` ファイルを .gitignoreに入れないよう注意します。
 
 ### vue.config.jsの色々
 
