@@ -247,3 +247,28 @@ sudo lsof -i -P | grep "LISTEN"
 # ポートの停止
 sudo apachectl stop
 ```
+
+### CIひとくちメモ
+
+[Travis-CI](https://travis-ci.org/) では、事前に `gem` を使って `travis` をインストールします。
+
+```bash
+# gemを使って travisをインストール
+sudo gem install travis
+```
+
+`<GITHUB_TOKEN>` を設定したい場合に、ひとまず暗号化を行います。
+
+```bash
+# GITHUB_TOKENの暗号化
+travis encrypt GITHUB_TOKEN=<GITHUB_TOKEN> --add env.matrix
+```
+
+すると `.yaml` に暗号化された情報が入ったことを確認することができます。
+
+```yaml
+# 自動生成
+env:
+  global:
+    - secure:
+```

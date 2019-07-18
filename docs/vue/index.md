@@ -78,7 +78,57 @@ Github等のアカウントを所有していれば OK [Netlify](https://www.net
 
 <img :src="$withBase('/netlify.png')" alt="netlify">
 
+### Gitlab-CIを回す
+
+[Gitlab-CI](https://docs.gitlab.com/ee/ci/) では [Node Image](https://hub.docker.com/_/node/) を前提にして、ステージを Lint / Deploy に分けて対応します。
+
+```yaml
+image: node:latest
+
+stages:
+  - lint
+  - deploy
+```
+
+TypeScriptを使っているので、欠かさず `@typescript-eslint` をインストール、チェックを進めます。
+
+```yaml
+eslint:
+  stage: lint
+  script:
+    - |
+      npm install eslint \
+      eslint-plugin-vue \
+      @typescript-eslint/parser \
+      @typescript-eslint/typescript-estree
+    - node_modules/eslint/bin/eslint.js .
+
+```
+
+Webアプリケーションのデプロイは [vue-cli@v3](https://cli.vuejs.org/guide/installation.html) | [Gitlab-CIへのデプロイ](https://cli.vuejs.org/guide/deployment.html#gitlab-pages) をご確認ください。
+
+```yaml
+pages:
+  stage: deploy
+  script:
+    - npm ci
+    - npm run build
+    - mv public public-vue
+    - mv dist public
+  artifacts:
+    paths:
+      - public
+  only:
+    - master
+```
+
+少しハマったこととして package-lock.json等の `.lock` ファイルを .gitignoreに入れないよう注意します。
+
 ### vue.config.jsの色々
+
+::: tip ブログにも書いています
+[vue.config.jsの色々](https://webneko.dev/posts/vue-config-and-more)
+:::
 
 ルートディレクトリに今回の主役である vue.config.js を置きます。
 
@@ -126,9 +176,9 @@ chainWebpack: config => {
 }
 ```
 
-#### あったら嬉しい！
+#### 普通にこれもやっておこうよ！
 
-とある別の Componentをインポートする際の、起点となるパスを設定しましょう。
+とある別の Componentをインポートする際に起点となるパスを設定しましょう。
 
 ```js
 configureWebpack: {
@@ -141,7 +191,7 @@ configureWebpack: {
 }
 ```
 
-すると以下のように実現できるのでオススメ。
+すると以下のように実現できます。
 
 ```js
 import Vue from 'vue'
@@ -158,7 +208,9 @@ export default Vue.extend({
 
 ### Vueの描画方法
 
+::: tip ブログにも書いています
 [マウントせずに、Vueを描画する方法](https://webneko.dev/posts/designed-without-mount-components)
+:::
 
 描画方法は主に、
 
