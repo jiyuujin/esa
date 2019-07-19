@@ -80,7 +80,7 @@ Github等のアカウントを所有していれば OK [Netlify](https://www.net
 
 ### Gitlab-CIを回す
 
-[Gitlab-CI](https://docs.gitlab.com/ee/ci/) では [Node Image](https://hub.docker.com/_/node/) を前提にして、ステージを Lint / UnitTest / Deploy に分けて対応します。
+[Gitlab-CI](https://docs.gitlab.com/ee/ci/) では [Node Image](https://hub.docker.com/_/node/) を前提にして、ステージを Lint / UnitTest / Transpile に分けて対応します。
 
 ```yaml
 image: node:latest
@@ -88,7 +88,7 @@ image: node:latest
 stages:
   - Lint
   - UnitTest
-  - Deploy
+  - Transpile
 ```
 
 少しハマったこととして package-lock.json等の `.lock` ファイルを .gitignoreに入れないよう注意します。
@@ -122,18 +122,20 @@ unit test:
     - npm run test:unit
 ```
 
-#### Webアプリケーションをデプロイする
+#### トランスパイルする
 
 Webアプリケーションのデプロイは [vue-cli@v3](https://cli.vuejs.org/guide/installation.html) | [Gitlab-CIへのデプロイ](https://cli.vuejs.org/guide/deployment.html#gitlab-pages) をご確認ください。
 
 ```yaml
 pages:
-  stage: Deploy
+  stage: Transpile
   script:
     - npm ci
     - npm run build
-    - mv public public-vue
-    - mv dist public
+#    - mv public public-vue
+#    - mv dist public
+    - mv dist output/dist
+    - cp -pr output/dist public
   artifacts:
     paths:
       - public
