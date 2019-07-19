@@ -65,6 +65,22 @@ npm -v
 
 プロジェクトリポジトリなどで `npm` を利用できるか確認しましょう。
 
+### Yarnインストール
+
+Yarnを使う場合は、もうひと声必要です！
+
+```bash
+# Yarn
+npm i -g yarn
+```
+
+同様に、プロジェクトリポジトリなどで `yarn` を利用できるか確認しましょう。
+
+```bash
+# Yarn
+yarn -v
+```
+
 ## サーバサイド環境構築
 
 - [【技術メモ】PHP、Rubyを使って開発を遂行するための構築手順書](https://webneko.dev/posts/the-guide-in-development-of-script-languages)
