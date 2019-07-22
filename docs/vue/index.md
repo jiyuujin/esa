@@ -3,9 +3,11 @@
 ## Vue CLI
 
 :::warning vue-cli@v3 をインストールします。
+今回 webpack4ベースの vue-cli@v3を使っています。
+
 間違っても `v2` をインストールしないよう、注意してください。
 
-前提として、 Node.js `v8.9.0` 以上であることを確認してください。
+これを前提として、 Node.js `v8.9.0` 以上であることを確認してください。
 
 ```bash
 # @vue/cli
@@ -83,10 +85,11 @@ Github等のアカウントを所有していれば OK [Netlify](https://www.net
 [Gitlab-CI](https://docs.gitlab.com/ee/ci/) では [Node Image](https://hub.docker.com/_/node/) を前提にして、ステージを Lint / UnitTest / Transpile に分けて対応します。
 
 ```yaml
-image: node:latest
+# 一括でイメージを設定するなら
+#image: node:latest
 
 stages:
-  - Lint
+  - ESLint
   - UnitTest
   - Transpile
 ```
@@ -98,8 +101,10 @@ stages:
 TypeScriptを使っているので、欠かさず `@typescript-eslint` をインストール、チェックを進めます。
 
 ```yaml
-eslint:
-  stage: Lint
+"Frontend ESLint":
+  # 個別でイメージを設定するなら
+  image: node:10
+  stage: ESLint
   script:
     - |
       npm install eslint \
@@ -115,8 +120,12 @@ eslint:
 `npm run test:unit` を叩くよう設定します。
 
 ```yaml
-unit test:
+"Frontend Unit Test":
+  # 個別でイメージを設定するなら
+  image: node:10
   stage: UnitTest
+  dependencies:
+    - 'Frontend ESLint'
   script:
     - npm install --progress=false
     - npm run test:unit
@@ -127,8 +136,12 @@ unit test:
 Webアプリケーションのデプロイは [vue-cli@v3](https://cli.vuejs.org/guide/installation.html) | [Gitlab-CIへのデプロイ](https://cli.vuejs.org/guide/deployment.html#gitlab-pages) をご確認ください。
 
 ```yaml
-pages:
+"Frontend Transpile":
+  # 個別でイメージを設定するなら
+  image: node:10
   stage: Transpile
+  dependencies:
+    - 'Frontend Unit Test'
   script:
     - npm ci
     - npm run build
