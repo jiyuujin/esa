@@ -92,6 +92,7 @@ stages:
   - ESLint
   - UnitTest
   - Transpile
+  - Deploy
 ```
 
 少しハマったこととして package-lock.json等の `.lock` ファイルを .gitignoreに入れないよう注意します。
@@ -102,8 +103,7 @@ TypeScriptを使っているので、欠かさず `@typescript-eslint` をイン
 
 ```yaml
 "Frontend ESLint":
-  # 個別でイメージを設定するなら
-  image: node:10
+  image: node:10 # 個別でイメージを設定するなら
   stage: ESLint
   script:
     - |
@@ -112,7 +112,6 @@ TypeScriptを使っているので、欠かさず `@typescript-eslint` をイン
       @typescript-eslint/parser \
       @typescript-eslint/typescript-estree
     - node_modules/eslint/bin/eslint.js .
-
 ```
 
 #### Unitテストを設定する
@@ -121,8 +120,7 @@ TypeScriptを使っているので、欠かさず `@typescript-eslint` をイン
 
 ```yaml
 "Frontend Unit Test":
-  # 個別でイメージを設定するなら
-  image: node:10
+  image: node:10 # 個別でイメージを設定するなら
   stage: UnitTest
   dependencies:
     - 'Frontend ESLint'
@@ -137,8 +135,7 @@ Webアプリケーションのデプロイは [vue-cli@v3](https://cli.vuejs.org
 
 ```yaml
 "Frontend Transpile":
-  # 個別でイメージを設定するなら
-  image: node:10
+  image: node:10 # 個別でイメージを設定するなら
   stage: Transpile
   dependencies:
     - 'Frontend Unit Test'
@@ -157,6 +154,32 @@ Webアプリケーションのデプロイは [vue-cli@v3](https://cli.vuejs.org
 ```
 
 `npm run build` を叩くことで `dist` に吐き出さる仕組みです。
+
+#### デプロイ
+
+Netlify Console [Site Settings] で `API ID` を `NETLIFY_SITE_ID` 確認します。
+
+続いて同じく Netlify Console [Oauth] で `NETLIFY_PUBLISH_KEY` を設定します。
+
+<img :src="$withBase('/gitlab-ci-access-token.png')" alt="Gitlab CI - Access Token">
+
+`NETLIFY_SITE_ID` / `NETLIFY_PUBLISH_KEY` を確認できたら、 Gitlab-CI [Settings] で設定します。
+
+<img :src="$withBase('/gitlab-ci-environment-variables.png')" alt="Gitlab CI - Environment Variables">
+
+```yaml
+"Deploy":
+  image: node:10 # 個別でイメージを設定するなら
+  stage: Deploy
+  dependencies:
+    - 'Transpile'
+  before_script:
+    - npm i -g netlify-cli
+  script:
+    - netlify deploy -s $NETLIFY_SITE_ID --auth $NETLIFY_PUBLISH_KEY -p --dir public
+  only:
+    - master
+```
 
 ### vue.config.jsの色々
 
