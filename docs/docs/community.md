@@ -16,7 +16,7 @@
 | [#2](https://webneko.dev/posts/enter-the-second-vue-js-nuxt-meetup-in-osaka) | [大阪](https://vuekansai.connpass.com/event/112900/) | 30 | 73 | 16 |
 | [#1](https://webneko.dev/posts/enter-the-first-vue-js-nuxt-meetup-in-kyoto) | [京都](https://vuekansai.connpass.com/event/110542/) | 20 | 23 | 6 |
 
-※ 申込者は最終的にキャンセルした者を含む。
+※ 参加者は最終的にキャンセルした者を含む。また回によってはキャンセル待ちによって参加できなかった者も含む。
 
 ## TypeScript
 
@@ -27,6 +27,20 @@
 |:---|:---|:---|:---|:---|
 | #2 | [大阪](https://kansaits.connpass.com/event/131541/) | 50 | - | - |
 | [#1](https://webneko.dev/posts/enter-the-kansai-ts-1-in-osaka) | [大阪](https://kansaits.connpass.com/event/130120/) | 30 | 45 | 7 |
+
+※ 参加者は最終的にキャンセルした者を含む。また回によってはキャンセル待ちによって参加できなかった者も含む。
+
+## React
+
+立ち上げてませんが、企画・運営に携わったので、記録しておきます。
+
+- [react.kyoto connpass](https://react-kyoto.connpass.com/)
+
+| # | 開催地 | 所定枠 | 参加者 | 登壇者 |
+|:---|:---|:---|:---|:---|
+| [#3](https://webneko.dev/posts/enter-the-react-kyoto-v0-3-0) | [大阪](https://react-kyoto.connpass.com/event/137847/) | 40 | 39 | 5 |
+
+※ 参加者は最終的にキャンセルした者を含む。また回によってはキャンセル待ちによって参加できなかった者も含む。
 
 ## その他
 
