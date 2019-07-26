@@ -102,7 +102,7 @@ stages:
 TypeScriptを使っているので、欠かさず `@typescript-eslint` をインストール、チェックを進めます。
 
 ```yaml
-"Frontend ESLint":
+"ESLint":
   image: node:10 # 個別でイメージを設定するなら
   stage: ESLint
   script:
@@ -112,6 +112,11 @@ TypeScriptを使っているので、欠かさず `@typescript-eslint` をイン
       @typescript-eslint/parser \
       @typescript-eslint/typescript-estree
     - node_modules/eslint/bin/eslint.js .
+  cache:
+    key: "${CI_PROJECT_ID}_cache_yarn"
+    paths:
+      - .yarn-cache/
+      - node_modules/
 ```
 
 #### Unitテストを設定する
@@ -119,14 +124,19 @@ TypeScriptを使っているので、欠かさず `@typescript-eslint` をイン
 `npm run test:unit` を叩くよう設定します。
 
 ```yaml
-"Frontend Unit Test":
+"Unit Test":
   image: node:10 # 個別でイメージを設定するなら
   stage: UnitTest
   dependencies:
-    - 'Frontend ESLint'
+    - 'ESLint'
   script:
     - npm install --progress=false
     - npm run test:unit
+  cache:
+    key: "${CI_PROJECT_ID}_cache_yarn"
+    paths:
+      - .yarn-cache/
+      - node_modules/
 ```
 
 #### トランスパイルする
@@ -134,21 +144,27 @@ TypeScriptを使っているので、欠かさず `@typescript-eslint` をイン
 Webアプリケーションのデプロイは [vue-cli@v3](https://cli.vuejs.org/guide/installation.html) | [Gitlab-CIへのデプロイ](https://cli.vuejs.org/guide/deployment.html#gitlab-pages) をご確認ください。
 
 ```yaml
-"Frontend Transpile":
+"Transpile":
   image: node:10 # 個別でイメージを設定するなら
   stage: Transpile
   dependencies:
-    - 'Frontend Unit Test'
+    - 'Unit Test'
   script:
     - npm ci
     - npm run build
 #    - mv public public-vue
 #    - mv dist public
+    - mkdir output
     - mv dist output/dist
-    - cp -pr output/dist public
+#    - cp -pr output/dist public
+  cache:
+    key: "${CI_PROJECT_ID}_cache_yarn"
+    paths:
+      - .yarn-cache/
+      - node_modules/
   artifacts:
     paths:
-      - public
+      - output/dist
   only:
     - master
 ```
@@ -176,7 +192,7 @@ Netlify Console [Site Settings] で `API ID` を `NETLIFY_SITE_ID` 確認しま�
   before_script:
     - npm i -g netlify-cli
   script:
-    - netlify deploy -s $NETLIFY_SITE_ID --auth $NETLIFY_PUBLISH_KEY -p --dir public
+    - netlify deploy -s $NETLIFY_SITE_ID --auth $NETLIFY_PUBLISH_KEY -p --dir output/dist
   only:
     - master
 ```
@@ -197,7 +213,7 @@ module.exports = {
 
 #### フロントエンドの作業場所を指定する
 
-先に vue-cli@v3 を展開した `front` 下で作業を進めます。
+先に vue-cli@v3 を展開した `frontend` 下で作業を進めますが、エントリーポイントや出力先などを設定します。
 
 ```js
 publicPath: '/',
@@ -216,7 +232,7 @@ pages: {
 }
 ```
 
-ビルド後に生成されるトランスパイル済ファイルは `outputDir` で指定した先に置くことになっていますが、 Laravelをサーバサイドに扱っている場合 public下に置くと良さそうです。
+ビルド後に生成されるトランスパイル済ファイルは `outputDir` で指定した先に置くことになっていますが、今回は `index.php` などベースファイルの置かれている `webroot/dist` ディレクトリ下に置くと良さそうです。
 
 またこのままだとファイル名にハッシュ値が付いた状態でトランスパイルされますが、ハッシュ値を付けない設定も可能です。
 
@@ -233,9 +249,19 @@ chainWebpack: config => {
 }
 ```
 
-#### 普通にこれもやっておこうよ！
+基本的にプロジェクト次第ですが、ハッシュ値を付けない方が都合が良くなる場面があるかもしれません。
 
-とある別の Componentをインポートする際に起点となるパスを設定しましょう。
+### ルーティングを指定する
+
+順当に vue-router を使うことにした訳ですが、サーバサイドでルーティングを既に作っていたこと。このルーティングに合わせて `frontend/main.ts` 内でルーティングリストを準備。ルーティングリスト作成は以下 Vueインスタンスを生成して描画する方法をご確認いただければ。🙏
+
+::: tip ブログにも書いています
+[マウントせずに、Vueを描画する方法](https://webneko.dev/posts/designed-without-mount-components)
+:::
+
+### 起点を指定する
+
+とある別の Componentをインポートする際に起点となるパスを設定します。
 
 ```js
 configureWebpack: {
@@ -476,8 +502,51 @@ yarn add vue-router
 
 ちなみに一々、ルーティングを書かなくても Nuxtと同じようにルーティングを自動化する [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-routing) もありますが、この場では割愛します。
 
-#### サーバサイドでこうやって使う
+src/main.tsでまずは vue-routerをインポート。
 
+```ts
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+
+Vue.use(VueRouter)
+```
+
+サーバサイドで作っているルーティングに合わせて Vueコンポーネントを表示します。動的ルーティングは、 `:id` 等のように `path` の後ろに設定すると良いです。
+
+```ts
+import HelloWorld from './components/HelloWorld.vue'
+import ProductEdit from './components/product/Edit.vue'
+
+import App from './App.vue'
+
+// Cakephp用ルーティングに合わせて、ルーティングリストを作成する
+const routes = [
+    { path: '/hq_products/test', component: HelloWorld },
+    { path: '/hq_products/edit/:id', component: ProductEdit },
+];
+
+const router = new VueRouter({
+    mode: 'history',
+    routes: routes
+});
+
+const app = new Vue({
+    render: h => h(App),
+    router
+}).$mount('#app');
+```
+
+そして特定の `.tpl` ファイル中の `app` にマウントできるよう、 `id` を設定。この中に `<router-view></router-view>` を設定します。
+
+```html
+<div id="app">
+    <router-view></router-view>  
+</div>
+```
+
+Vueコンポーネントで作った情報が CakePHP上でレンダリングされることを確認できれば OK
+
+:::tip Laravelでは
 Laravelの場合 `.blade.php` (Cakephpの場合 `.tpl` など) に `<router-view></router-view>` を設定します。
 
 ```php
@@ -511,6 +580,7 @@ const app = new Vue({
     router
 }).$mount('#app');
 ```
+:::
 
 ### vue-chartjs
 
