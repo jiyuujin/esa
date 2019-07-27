@@ -83,9 +83,6 @@ yarn -v
 
 ## サーバサイド環境構築
 
-- [【技術メモ】PHP、Rubyを使って開発を遂行するための構築手順書](https://webneko.dev/posts/the-guide-in-development-of-script-languages)
-- [【技術メモ】Python3を使って Discord Botを作成するための構築手順書](https://webneko.dev/posts/the-guide-in-development-of-discord-bot-by-python3)
-
 ### phpenvインストール
 
 PHPを使うため、 [phpenv](https://github.com/phpenv/phpenv)を採用します。
