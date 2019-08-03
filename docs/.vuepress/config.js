@@ -40,12 +40,8 @@ module.exports = {
         link: '/docs/',
       },
       {
-        text: 'Vue',
-        link: '/vue/',
-      },
-      {
-        text: 'Style',
-        link: '/style/',
+        text: 'ブログ',
+        link: 'https://webneko.dev/',
       }
     ],
     sidebarDepth: 3,
@@ -58,25 +54,8 @@ module.exports = {
             '',
             'infra',
             'devops',
+            'guide',
             'community'
-          ]
-        }
-      ],
-      '/vue/': [
-        {
-          title: 'Vue',
-          collapsable: false,
-          children: [
-            ''
-          ]
-        }
-      ],
-      '/style/': [
-        {
-          title: 'Style',
-          collapsable: false,
-          children: [
-            ''
           ]
         }
       ]
