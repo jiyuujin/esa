@@ -24,36 +24,7 @@ npm i -g @vue/cli
 vue create vue-cli-sample
 ```
 
-今回 TypeScriptを使うので `Manually select features` を選択します。オプションは後からでも追加できるので、とりあえず適当に入れておきましょう。
-
-インストール完了後、以下のように展開されます。
-
-```
-.
-├── .browserslistrc
-├── .dockerignore
-├── .editorconfig
-├── .eslintrc.js
-├── .git
-├── .gitignore
-├── .idea
-├── README.md
-├── babel.config.js
-├── dist
-├── docker-compose.yml
-├── docker-compose.yml.example
-├── frontend
-│   ├── public
-│   ├── src
-│   ├── tests
-├── jest.config.js
-├── node_modules
-├── package-lock.json
-├── package.json
-├── postcss.config.js
-├── tsconfig.json
-└── vue.config.js
-```
+TypeScriptを使う場合は `Manually select features` を選択します。オプションは後からでも追加できるので、とりあえず適当に入れておきましょう。
 
 ### Netlifyにデプロイ
 
@@ -529,58 +500,26 @@ module.exports = {
 
 ### vue-router
 
-[vue-router](https://router.vuejs.org/ja/installation.html) をインストールします。ただし [Nuxt](https://ja.nuxtjs.org/) では既に入っています。
+詳しくは [vue-router](https://router.vuejs.org/ja/installation.html) をご確認ください。ただし [Nuxt](https://ja.nuxtjs.org/) では既に入っています。
 
 ```bash
 # vue-router
 yarn add vue-router
 ```
 
-ちなみに一々、ルーティングを書かなくても Nuxtと同じようにルーティングを自動化する [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-routing) もありますが、この場では割愛します。
+ちなみに一々、ルーティングを書かなくても自動化してくれる [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-routing) もありますが、この場では割愛します。
 
-src/main.tsでまずは vue-routerをインポート。
-
-```ts
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-
-Vue.use(VueRouter)
-```
-
-サーバサイドで作っているルーティングに合わせて Vueコンポーネントを表示します。動的ルーティングは、 `:id` 等のように `path` の後ろに設定すると良いです。
+サーバサイドで準備しているルーティングに合わせてルーティングリストを作成します。また動的ルーティングは、 `:id` 等のように `path` の後ろに設定すると良いです。
 
 ```ts
 import HelloWorld from './components/HelloWorld.vue'
 import ProductEdit from './components/product/Edit.vue'
 
-import App from './App.vue'
-
-// Cakephp用ルーティングに合わせて、ルーティングリストを作成する
 const routes = [
     { path: '/hq_products/test', component: HelloWorld },
     { path: '/hq_products/edit/:id', component: ProductEdit },
 ];
-
-const router = new VueRouter({
-    mode: 'history',
-    routes: routes
-});
-
-const app = new Vue({
-    render: h => h(App),
-    router
-}).$mount('#app');
 ```
-
-そして特定の `.tpl` ファイル中の `app` にマウントできるよう、 `id` を設定。この中に `<router-view></router-view>` を設定します。
-
-```html
-<div id="app">
-    <router-view></router-view>  
-</div>
-```
-
-Vueコンポーネントで作った情報が CakePHP上でレンダリングされることを確認できれば OK
 
 :::tip Laravelでは
 Laravelの場合 `.blade.php` (Cakephpの場合 `.tpl` など) に `<router-view></router-view>` を設定します。
