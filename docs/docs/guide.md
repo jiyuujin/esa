@@ -542,6 +542,29 @@ const routes = [
 vue add i18n
 ```
 
+と言えば済む話ですが、簡単に解説を😀
+
+事前に `i18n` ディレクトリ下に `.json` を設定、個別の `key` にアクセスすることで多言語対応を実現することができます。
+
+#### pluginsを見よう
+
+plugins/i18n.tsを作ります。
+
+デフォルトの言語だけではなく、仮に `key` が存在しなかった場合の言語も設定します。
+
+```ts
+import Vue from 'vue'
+import VueI18n, { LocaleMessages } from 'vue-i18n'
+
+Vue.use(VueI18n)
+
+export default new VueI18n({
+    locale: process.env.VUE_APP_I18N_LOCALE || 'ja',
+    fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
+    messages: loadLocaleMessages()
+})
+```
+
 ### vue-chartjs
 
 前提として [vue-cli@v3](https://cli.vuejs.org/) で進めますが、 [nuxt](https://ja.nuxtjs.org/) でも基本的に変わりませんので、広く見ていただければ。🙏
