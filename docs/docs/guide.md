@@ -391,10 +391,22 @@ import 'bootstrap-vue/dist/bootstrap-vue.css'
 Vue.use(BootstrapVue)
 ```
 
-:::warning 注意すること
-`b-form-input` で日本語IMEが効かない事象が発生。
+Scoped CSSを利用して views/Index.vue で読み込みます。
 
-[現在は解決している](https://github.com/bootstrap-vue/bootstrap-vue/issues/2131)
+```sass
+@import '~bootstrap/scss/bootstrap.scss'
+@import '~bootstrap-vue/src/index.scss'
+```
+
+:::warning 注意すること
+旧バージョンの `bootstrap` との競合や `jQuery` を使わざるを得ない場面が来るかもしれません。
+
+1. `b-form-input` で日本語IMEが効かない
+   - [現在は解決](https://github.com/bootstrap-vue/bootstrap-vue/issues/2131)
+
+2. `b-popover` でイベント発火しない
+   - `b-dropdown` で代用
+
 :::
 
 ## Unitテスト
@@ -521,41 +533,14 @@ const routes = [
 ];
 ```
 
-:::tip Laravelでは
-Laravelの場合 `.blade.php` (Cakephpの場合 `.tpl` など) に `<router-view></router-view>` を設定します。
+### vue-i18n
 
-```php
-<div id="app">
-    <router-view></router-view>
-</div>
+基本的に Vue CLI では `add` するだけで良い
+
+```bash
+# vue-i18n
+vue add i18n
 ```
-
-このように `<router-view></router-view>` を設定したことで、 src/main.ts でサーバサイド用ルーティングに合わせて、フロントで作成した Componentを表示することができます。また動的ルーティングは、 `:id` 等のように `path` の後ろに設定すると良いです。
-
-```ts
-// Componentをインポート
-import HelloWorld from './components/HelloWorld.vue'
-import ProductEdit from './components/product/Edit.vue'
-
-import App from './App.vue'
-
-// ルーティングリストを作成
-const routes = [
-    { path: '/test', component: HelloWorld },
-    { path: '/product/edit/:id', component: ProductEdit },
-];
-
-const router = new VueRouter({
-    mode: 'history',
-    routes: routes
-});
-
-const app = new Vue({
-    render: h => h(App),
-    router
-}).$mount('#app');
-```
-:::
 
 ### vue-chartjs
 
