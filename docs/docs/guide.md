@@ -182,16 +182,12 @@ module.exports = {
 }
 ```
 
-#### フロントエンドの作業場所を指定する
-
-先に vue-cli@v3 を展開した `frontend` 下で作業を進めますが、エントリーポイントや出力先などを設定します。
+今回 vue-cli@v3 をルートディレクトリでは無い場所で作業を進めるので、エントリーポイントや出力先などを設定する必要があります。
 
 ```js
-publicPath: '/',
-outputDir: 'dist/',
 pages: {
     index: {
-        entry: './frontend/src/main.js',
+        entry: './frontend/src/main.ts',
         template: './frontend/public/index.html',
         filename: 'index.html',
         chunks: [
@@ -203,9 +199,22 @@ pages: {
 }
 ```
 
-ビルド後に生成されるトランスパイル済ファイルは `outputDir` で指定した先に置くことになっていますが、今回は `index.php` などベースファイルの置かれている `webroot/dist` ディレクトリ下に置くと良さそうです。
+とある別のコンポーネントをインポートする際に起点となるパスを設定します。
 
-またこのままだとファイル名にハッシュ値が付いた状態でトランスパイルされますが、ハッシュ値を付けない設定も可能です。
+```js
+configureWebpack: {
+    resolve: {
+        alias: {
+            // 起点となるパスを設定します
+            '@': path.join(__dirname, 'frontend/src/')
+        }
+    }
+}
+```
+
+ビルド後に生成されるトランスパイル済ファイルは CakePHP側からレンダリングされるよう、今回は `webroot/dist` ディレクトリ下に置くと良さそうです。
+
+またこのままだとハッシュ値が付いた状態でトランスパイルされますが、ハッシュ値を付けない設定も可能です。
 
 ```js
 chainWebpack: config => {
@@ -222,43 +231,21 @@ chainWebpack: config => {
 
 基本的にプロジェクト次第ですが、ハッシュ値を付けない方が都合が良くなる場面があるかもしれません。
 
-### ルーティングを指定する
+#### ルーティングを指定する
 
-順当に vue-router を使うことにした訳ですが、サーバサイドでルーティングを既に作っていたこと。このルーティングに合わせて `frontend/main.ts` 内でルーティングリストを準備。ルーティングリスト作成は以下 Vueインスタンスを生成して描画する方法をご確認いただければ。🙏
+順当に [vue-router](https://router.vuejs.org/ja/installation.html) を使うことにした訳ですが、サーバサイドでルーティングを既に作っていたこと。そのためこれに合わせて frontend/main.ts 内でルーティングリストを準備しています。
 
-::: tip ブログにも書いています
-[マウントせずに、Vueを描画する方法](https://webneko.dev/posts/designed-without-mount-components)
-:::
+#### 最後に、
 
-### 起点を指定する
+このルーティングを以って初めて CakePHP に Vue を導入することができました。
 
-とある別の Componentをインポートする際に起点となるパスを設定します。
-
-```js
-configureWebpack: {
-    resolve: {
-        alias: {
-            // 起点となるパスを設定します
-            '@': path.join(__dirname, 'front/src/')
-        }
-    }
-}
+```html
+<div id="app">
+    <router-view/>
+</div>
 ```
 
-すると以下のように実現できます。
-
-```js
-import Vue from 'vue'
-
-// 動的インポートを実現したい
-const HelloWorld = () => import(`@/components/HelloWorld.vue`)
-
-export default Vue.extend({
-    components: {
-        HelloWorld
-    }
-})
-```
+上記を .tpl に設定することで、無事にレンダリングされることを確認しましょう😋
 
 ### Vueの描画方法
 
@@ -271,7 +258,7 @@ export default Vue.extend({
 1. Vueインスタンスを生成する
 2. ドキュメント外 (main.js) で個別のDOMに突っ込んで描画する
 
-前者がごく一般的な方法かと思います。 [vue-cli](https://cli.vuejs.org/) を採用すると以下のように main.jsで Vueインスタンスを生成します。前提として vue-router を使ってルーティングリストを準備しましょう。
+前者がごく一般的な方法かと思います。 Vue CLI を採用すると以下のように main.js で Vueインスタンスを生成します。前提として vue-router を使ってルーティングリストを準備しましょう。
 
 ```js
 new Vue({
@@ -280,7 +267,9 @@ new Vue({
 }).$mount('#app')
 ```
 
-一方で後者の前提は Componentごと DOMを準備すること。画面描画と違い、部分描画を目指しています。
+#### ドキュメント外 (main.js) で個別のDOMに突っ込んで描画する
+
+コンポーネントごと DOMを準備すること。画面描画と違い、部分描画を目指しています。
 
 ```js
 import HelloWorld from '@/components/HelloWorld.vue'
@@ -291,10 +280,6 @@ const HelloWorldInstance = new HelloWorldClass().$mount()
 
 document.getElementById('hello-world').appendChild(HelloWorldInstance.$el)
 ```
-
-初めて知った内容ですが、テンプレートファイル (.blade.php/.tpl) などに、吐き出した Vue Componentを設定して使います。詳しくは以下 [vm-mount](https://jp.vuejs.org/v2/api/#vm-mount) をご参照ください。
-
-#### 共通処理として、
 
 実際にアプリケーションに組み込む場合、極力外部に切り出しておきましょう。
 
@@ -311,7 +296,7 @@ export const AppendComponent = (
 }
 ```
 
-### wrapperとして吐き出す方法
+#### wrapperとして吐き出す方法
 
 `target` オプションに `wc` を付けてビルドすること。
 
