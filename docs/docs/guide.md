@@ -170,135 +170,16 @@ Netlify Console [Site Settings] で `API ID` を `NETLIFY_SITE_ID` 確認しま�
 
 ### vue.config.jsの色々
 
-::: tip ブログにも書いています
-[vue.config.jsの色々](https://webneko.dev/posts/vue-config-and-more)
-:::
-
-ルートディレクトリに今回の主役である vue.config.js を置きます。
-
-```js
-module.exports = {
-    // 必要に応じて追加します
-}
-```
-
-今回 vue-cli@v3 をルートディレクトリでは無い場所で作業を進めるので、エントリーポイントや出力先などを設定する必要があります。
-
-```js
-pages: {
-    index: {
-        entry: './frontend/src/main.ts',
-        template: './frontend/public/index.html',
-        filename: 'index.html',
-        chunks: [
-            'chunk-vendors',
-            'chunk-common',
-            'index'
-        ]
-    }
-}
-```
-
-とある別のコンポーネントをインポートする際に起点となるパスを設定します。
-
-```js
-configureWebpack: {
-    resolve: {
-        alias: {
-            // 起点となるパスを設定します
-            '@': path.join(__dirname, 'frontend/src/')
-        }
-    }
-}
-```
-
-ビルド後に生成されるトランスパイル済ファイルは CakePHP側からレンダリングされるよう、今回は `webroot/dist` ディレクトリ下に置くと良さそうです。
-
-またこのままだとハッシュ値が付いた状態でトランスパイルされますが、ハッシュ値を付けない設定も可能です。
-
-```js
-chainWebpack: config => {
-    if (process.env.NODE_ENV === 'production') {
-        // メインJSファイル名にハッシュ値を付けない
-        config.output
-            .filename('[name].js')
-        // chunk-vendorsファイル名にハッシュ値を付けない
-        config.output
-            .chunkFilename('js/[name].js')
-    }
-}
-```
-
-基本的にプロジェクト次第ですが、ハッシュ値を付けない方が都合が良くなる場面があるかもしれません。
-
-#### ルーティングを指定する
-
-順当に [vue-router](https://router.vuejs.org/ja/installation.html) を使うことにした訳ですが、サーバサイドでルーティングを既に作っていたこと。そのためこれに合わせて frontend/main.ts 内でルーティングリストを準備しています。
-
-#### 最後に、
-
-このルーティングを以って初めて CakePHP に Vue を導入することができました。
-
-```html
-<div id="app">
-    <router-view/>
-</div>
-```
-
-上記を .tpl に設定することで、無事にレンダリングされることを確認しましょう😋
+- [vue.config.jsの色々](https://webneko.dev/posts/vue-config-and-more)
 
 ### Vueの描画方法
 
-::: tip ブログにも書いています
-[マウントせずに、Vueを描画する方法](https://webneko.dev/posts/designed-without-mount-components)
-:::
+- Vueインスタンスを生成する
+- [個別のDOMに突っ込んで描画する](https://webneko.dev/posts/design-vue-components-to-individual-dom)
 
-描画方法は主に、
+#### wrapperとして吐き出す
 
-1. Vueインスタンスを生成する
-2. ドキュメント外 (main.js) で個別のDOMに突っ込んで描画する
-
-前者がごく一般的な方法かと思います。 Vue CLI を採用すると以下のように main.js で Vueインスタンスを生成します。前提として vue-router を使ってルーティングリストを準備しましょう。
-
-```js
-new Vue({
-    router,
-    render: h => h(App)
-}).$mount('#app')
-```
-
-#### ドキュメント外 (main.js) で個別のDOMに突っ込んで描画する
-
-コンポーネントごと DOMを準備すること。画面描画と違い、部分描画を目指しています。
-
-```js
-import HelloWorld from '@/components/HelloWorld.vue'
-
-const HelloWorldClass = Vue.extend(HelloWorld)
-
-const HelloWorldInstance = new HelloWorldClass().$mount()
-
-document.getElementById('hello-world').appendChild(HelloWorldInstance.$el)
-```
-
-実際にアプリケーションに組み込む場合、極力外部に切り出しておきましょう。
-
-```ts
-export const AppendComponent = (
-    component: VueConstructor,
-    id: string
-) => {
-    const ComponentClass = Vue.extend(component)
-    const ComponentInstance = new ComponentClass().$mount()
-    if (document.getElementById(id) != null) {
-        document.getElementById(id).appendChild(ComponentInstance.$el)
-    }
-}
-```
-
-#### wrapperとして吐き出す方法
-
-`target` オプションに `wc` を付けてビルドすること。
+`target` オプションに `wc` を付けてビルドして wrapperとして吐き出す方法があります。
 
 ```bash
 # Bundle Build
@@ -348,12 +229,14 @@ nuxt build
 
 ## UIフレームワーク
 
+Quasarを除いて、大体経験あり。
+
 - [Bootstrap-Vue](https://bootstrap-vue.js.org/)
 - [Element-UI](https://element.eleme.io/#/en-US)
 - [Vuetify](https://vuetifyjs.com/ja/)
 - [Vuesax](https://lusaxweb.github.io/vuesax/)
-- [Quasar](https://quasar.dev/)
 - [Tailwind CSS](https://tailwindcss.com/)
+- [Quasar](https://quasar.dev/)
 
 ### bootstrap-vue
 
@@ -393,6 +276,11 @@ Scoped CSSを利用して views/Index.vue で読み込みます。
    - `b-dropdown` で代用
 
 :::
+
+### Tailwind CSS
+
+- [Nuxt Adminに Tailwind CSSを導入](https://webneko.dev/posts/redesigned-nuxt-admin-used-tailwindcss)
+- [Tailwind CSS v1.0 リリース🎉](https://webneko.dev/posts/major-update-to-tailwindcss-v1)
 
 ## Unitテスト
 
