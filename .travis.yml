@@ -1,0 +1,32 @@
+language: node_js
+
+stages:
+  - lint
+  - compile
+
+node_js:
+  - "10"
+
+cache:
+  #  yarn: true
+  directories:
+    - node_modules
+
+jobs:
+  include:
+    # ESLint
+    - stage: "lint"
+      name: "ESLint"
+      install:
+        - |
+          npm install eslint \
+          eslint-plugin-vue
+      script:
+        - node_modules/eslint/bin/eslint.js docs/.vuepress/
+    # Build Compile
+    - stage: "compile"
+      name: "Build Compile"
+      install:
+        - npm install
+      script:
+        - npm run build

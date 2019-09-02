@@ -1,3 +1,4 @@
+/* eslint-disable */
 module.exports = {
   title: 'ねこのえさ',
   description: 'Web猫のドキュメント集',
@@ -68,4 +69,5 @@ module.exports = {
       }
     }
   }
-};
+}
+/* eslint-enable */
