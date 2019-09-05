@@ -7,14 +7,14 @@ export const SLIDES = [
         tags: ['Nuxt'],
         created_at: '2018/09/14'
     },
-    {
-        id: 2,
-        name: 'Web猫ブログ ~ 開設そして運営',
-        url: 'https://webneko.dev/posts/enter-the-second-vue-js-nuxt-meetup-in-osaka',
-        event: 'v-kansai #2',
-        tags: ['Nuxt', 'Contentful'],
-        created_at: '2019/01/19'
-    },
+    // {
+    //     id: 2,
+    //     name: 'Web猫ブログ ~ 開設そして運営',
+    //     url: 'https://webneko.dev/posts/enter-the-second-vue-js-nuxt-meetup-in-osaka',
+    //     event: 'v-kansai #2',
+    //     tags: ['Nuxt', 'Contentful'],
+    //     created_at: '2019/01/19'
+    // },
     {
         id: 3,
         name: 'コンシューマ向けSPA開発から得られた知見',
@@ -23,30 +23,30 @@ export const SLIDES = [
         tags: ['Laravel'],
         created_at: '2019/01/31'
     },
-    {
-        id: 4,
-        name: 'Web猫ブログ ~ 問い合わせ機能のリリース',
-        url: 'https://webneko.dev/posts/enter-the-nuxt-meetup-7',
-        event: 'Nuxt meetup #7',
-        tags: ['Nuxt', 'Contentful'],
-        created_at: '2019/02/17'
-    },
-    {
-        id: 5,
-        name: 'Web猫ブログ ~ プロフィールページのカイゼン',
-        url: 'https://webneko.dev/posts/enter-the-third-v-kansai-vue-js-nuxt-meetup-in-kyoto',
-        event: 'v-kansai #3',
-        tags: ['Nuxt', 'Contentful'],
-        created_at: '2019/01/19'
-    },
-    {
-        id: 6,
-        name: 'Web猫ブログ ~ 型を導入',
-        url: 'https://webneko.dev/posts/enter-the-fourth-v-kansai-vue-js-nuxt-meetup-in-osaka',
-        event: 'v-kansai #4',
-        tags: ['Nuxt', 'Contentful', 'TypeScript'],
-        created_at: '2019/01/19'
-    },
+    // {
+    //     id: 4,
+    //     name: 'Web猫ブログ ~ 問い合わせ機能のリリース',
+    //     url: 'https://webneko.dev/posts/enter-the-nuxt-meetup-7',
+    //     event: 'Nuxt meetup #7',
+    //     tags: ['Nuxt', 'Contentful'],
+    //     created_at: '2019/02/17'
+    // },
+    // {
+    //     id: 5,
+    //     name: 'Web猫ブログ ~ プロフィールページのカイゼン',
+    //     url: 'https://webneko.dev/posts/enter-the-third-v-kansai-vue-js-nuxt-meetup-in-kyoto',
+    //     event: 'v-kansai #3',
+    //     tags: ['Nuxt', 'Contentful'],
+    //     created_at: '2019/01/19'
+    // },
+    // {
+    //     id: 6,
+    //     name: 'Web猫ブログ ~ 型を導入',
+    //     url: 'https://webneko.dev/posts/enter-the-fourth-v-kansai-vue-js-nuxt-meetup-in-osaka',
+    //     event: 'v-kansai #4',
+    //     tags: ['Nuxt', 'Contentful', 'TypeScript'],
+    //     created_at: '2019/01/19'
+    // },
     {
         id: 7,
         name: 'プロダクト制作、そして心がけていること',
@@ -79,14 +79,14 @@ export const SLIDES = [
         tags: ['Vue', 'Jest'],
         created_at: '2019/08/17'
     },
-    {
-        id: 11,
-        name: 'Nuxt v2.9',
-        url: 'https://slides.com/jiyuujin/20190821-02#/',
-        event: 'v-kansai #9',
-        tags: ['Nuxt'],
-        created_at: '2019/08/21'
-    },
+    // {
+    //     id: 11,
+    //     name: 'Nuxt v2.9',
+    //     url: 'https://slides.com/jiyuujin/20190821-02#/',
+    //     event: 'v-kansai #9',
+    //     tags: ['Nuxt'],
+    //     created_at: '2019/08/21'
+    // },
     {
         id: 12,
         name: 'Virtual DOMとは',
