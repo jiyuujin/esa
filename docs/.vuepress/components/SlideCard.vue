@@ -100,11 +100,11 @@ export default {
 
 .slide-card-link a {
   text-decoration: none;
-  color: #dd4caa;
+  color: #42b883;
   margin: 0 10px;
 }
 
 .slide-card-link a:hover {
-  color: #dd4caa;
+  color: #42b883;
 }
 </style>
