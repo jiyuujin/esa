@@ -9,6 +9,14 @@ export const SLIDES = [
     },
     // {
     //     id: 2,
+    //     name: 'Vue Fes Japan 2018 と私自身の振り返り',
+    //     url: 'https://jiyuujin.github.io/vue-fes-japan-2018-feedback',
+    //     event: 'v-kansai #2',
+    //     tags: ['Vue'],
+    //     created_at: '2018/12/20'
+    // },
+    // {
+    //     id: 3,
     //     name: 'Web猫ブログ ~ 開設そして運営',
     //     url: 'https://webneko.dev/posts/enter-the-second-vue-js-nuxt-meetup-in-osaka',
     //     event: 'v-kansai #2',
@@ -16,7 +24,7 @@ export const SLIDES = [
     //     created_at: '2019/01/19'
     // },
     {
-        id: 3,
+        id: 4,
         name: 'コンシューマ向けSPA開発から得られた知見',
         url: 'https://slides.com/jiyuujin/20190131#/',
         event: 'Laravel/Vue.js #7',
@@ -24,7 +32,7 @@ export const SLIDES = [
         created_at: '2019/01/31'
     },
     // {
-    //     id: 4,
+    //     id: 5,
     //     name: 'Web猫ブログ ~ 問い合わせ機能のリリース',
     //     url: 'https://webneko.dev/posts/enter-the-nuxt-meetup-7',
     //     event: 'Nuxt meetup #7',
@@ -32,7 +40,7 @@ export const SLIDES = [
     //     created_at: '2019/02/17'
     // },
     // {
-    //     id: 5,
+    //     id: 6,
     //     name: 'Web猫ブログ ~ プロフィールページのカイゼン',
     //     url: 'https://webneko.dev/posts/enter-the-third-v-kansai-vue-js-nuxt-meetup-in-kyoto',
     //     event: 'v-kansai #3',
@@ -40,7 +48,7 @@ export const SLIDES = [
     //     created_at: '2019/01/19'
     // },
     // {
-    //     id: 6,
+    //     id: 7,
     //     name: 'Web猫ブログ ~ 型を導入',
     //     url: 'https://webneko.dev/posts/enter-the-fourth-v-kansai-vue-js-nuxt-meetup-in-osaka',
     //     event: 'v-kansai #4',
@@ -48,7 +56,7 @@ export const SLIDES = [
     //     created_at: '2019/01/19'
     // },
     {
-        id: 7,
+        id: 8,
         name: 'プロダクト制作、そして心がけていること',
         url: 'https://slides.com/jiyuujin/20190606#/',
         event: 'Re:build event',
@@ -56,7 +64,7 @@ export const SLIDES = [
         created_at: '2019/06/06'
     },
     {
-        id: 8,
+        id: 9,
         name: '高速ビルドで取り組んでいること',
         url: 'https://slides.com/jiyuujin/v-kansai-7#/',
         event: 'v-kansai #7',
@@ -64,7 +72,7 @@ export const SLIDES = [
         created_at: '2019/06/22'
     },
     {
-        id: 9,
+        id: 10,
         name: '無限スクロールの話',
         url: 'https://slides.com/jiyuujin/20190724#/',
         event: 'v-kansai #8',
@@ -72,7 +80,7 @@ export const SLIDES = [
         created_at: '2019/07/24'
     },
     {
-        id: 10,
+        id: 11,
         name: 'Vue CLI テスト Tips集',
         url: 'https://slides.com/jiyuujin/20190817#/',
         event: 'CaT vol.7',
@@ -80,7 +88,7 @@ export const SLIDES = [
         created_at: '2019/08/17'
     },
     // {
-    //     id: 11,
+    //     id: 12,
     //     name: 'Nuxt v2.9',
     //     url: 'https://slides.com/jiyuujin/20190821-02#/',
     //     event: 'v-kansai #9',
@@ -88,7 +96,7 @@ export const SLIDES = [
     //     created_at: '2019/08/21'
     // },
     {
-        id: 12,
+        id: 13,
         name: 'Virtual DOMとは',
         url: 'https://slides.com/jiyuujin/20190827#/',
         event: 'Tech Conf #0 (仮)',
