@@ -5,3 +5,4 @@ docs/.vuepress/dist
 *.log
 package-lock.json
 yarn.lock
+.env
