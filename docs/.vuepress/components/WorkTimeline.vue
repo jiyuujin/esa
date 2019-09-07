@@ -19,12 +19,20 @@
 </template>
 
 <script>
-import ApolloClient from 'apollo-boost'
+import ApolloClient from 'apollo-client'
+import { HttpLink } from 'apollo-link-http'
+import { InMemoryCache } from 'apollo-cache-inmemory'
 import gql from 'graphql-tag'
+import fetch from 'node-fetch'
 import dayjs from 'dayjs'
 
 const apolloClient = new ApolloClient({
-  uri: process.env.GRAPH_API || 'https://api.graph.cool/simple/v1/cjr94yoay4hds0196reyj9lke',
+  link: new HttpLink({
+    /* eslint no-undef: 0 */
+    uri: process.env.GRAPH_API || 'https://api.graph.cool/simple/v1/cjr94yoay4hds0196reyj9lke',
+    fetch
+  }),
+  cache: new InMemoryCache()
 })
 
 export default {
@@ -48,7 +56,6 @@ export default {
       `,
     })
     .then(res => {
-      // console.log(res.data.allWorks)
       this.allWorks = res.data.allWorks
     })
   },
