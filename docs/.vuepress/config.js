@@ -1,3 +1,4 @@
+/* eslint no-undef: 0 */
 module.exports = {
   title: 'ねこのえさ',
   description: 'Web猫のドキュメント集',
