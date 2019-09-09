@@ -7,13 +7,13 @@
     "build": "vuepress build docs"
   },
   "dependencies": {
-    "apollo-cache-inmemory": "^1.6.3",
-    "apollo-client": "^2.6.4",
-    "apollo-link-http": "^1.5.16",
+    "apollo-cache-inmemory": "1.6.3",
+    "apollo-client": "2.6.4",
+    "apollo-link-http": "1.5.16",
     "dayjs": "1.8.16",
-    "graphql": "^14.5.4",
-    "graphql-tag": "^2.10.1",
-    "node-fetch": "^2.6.0",
+    "graphql": "14.5.4",
+    "graphql-tag": "2.10.1",
+    "node-fetch": "2.6.0",
     "vue-feather-icons": "5.0.0",
     "vuepress": "1.0.4"
   },
