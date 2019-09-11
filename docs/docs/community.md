@@ -7,7 +7,7 @@
 
 | # | 開催地 | 参加者 | 出席者 | 登壇者 |
 |:---|:---|:---|:---|:---|
-| #11 | 京都 | - | - | - |
+| #11 | [京都](https://vuekansai.connpass.com/event/144194) | - | - | - |
 | #10 | [大阪](https://vuekansai.connpass.com/event/143861/) | 10 | - | 10 |
 | [#9](https://webneko.dev/posts/enter-the-v-kansai-9-with-fjug-osaka) | [京都](https://vuekansai.connpass.com/event/137411/) | 38 | - | 9 |
 | [#8](https://webneko.dev/posts/enter-the-v-kansai-8-in-osaka) | [大阪](https://vuekansai.connpass.com/event/136514/) | 15 | - | 7 |
