@@ -8,15 +8,15 @@
 | # | 開催地 | 参加者 | 出席者 | 登壇者 |
 |:---|:---|:---|:---|:---|
 | #11 | [京都](https://vuekansai.connpass.com/event/144194) | - | - | - |
-| #10 | [大阪](https://vuekansai.connpass.com/event/143861/) | 10 | - | 10 |
+| #10 | [大阪](https://vuekansai.connpass.com/event/143861/) | 20 | - | 10 |
 | [#9](https://webneko.dev/posts/enter-the-v-kansai-9-with-fjug-osaka) | [京都](https://vuekansai.connpass.com/event/137411/) | 38 | - | 9 |
-| [#8](https://webneko.dev/posts/enter-the-v-kansai-8-in-osaka) | [大阪](https://vuekansai.connpass.com/event/136514/) | 15 | - | 7 |
+| [#8](https://webneko.dev/posts/enter-the-v-kansai-8-in-osaka) | [大阪](https://vuekansai.connpass.com/event/136514/) | 28 | - | 7 |
 | [#7](https://webneko.dev/posts/enter-the-v-kansai-7-in-kyoto) | [京都](https://vuekansai.connpass.com/event/127057/) | 28 | - | 8 |
-| [#6](https://webneko.dev/posts/enter-the-v-kansai-6-with-monaca-ug-osaka) | [大阪](https://vuekansai.connpass.com/event/126754/) | 20 | - | 7 |
+| [#6](https://webneko.dev/posts/enter-the-v-kansai-6-with-monaca-ug-osaka) | [大阪](https://vuekansai.connpass.com/event/126754/) | 17 | - | 7 |
 | [#5](https://webneko.dev/posts/enter-the-final-v-kansai-of-the-heisei-period) | [京都](https://vuekansai.connpass.com/event/122664/) | 27 | - | 7 |
-| [#4](https://webneko.dev/posts/enter-the-fourth-v-kansai-vue-js-nuxt-meetup-in-osaka) | [大阪](https://vuekansai.connpass.com/event/121581/) | 30 | - | 10 |
+| [#4](https://webneko.dev/posts/enter-the-fourth-v-kansai-vue-js-nuxt-meetup-in-osaka) | [大阪](https://vuekansai.connpass.com/event/121581/) | 49 | - | 10 |
 | [#3](https://webneko.dev/posts/enter-the-third-v-kansai-vue-js-nuxt-meetup-in-kyoto) | [京都](https://vuekansai.connpass.com/event/114795/) | 25 | - | 5 |
-| [#2](https://webneko.dev/posts/enter-the-second-vue-js-nuxt-meetup-in-osaka) | [大阪](https://vuekansai.connpass.com/event/112900/) | 30 | - | 16 |
+| [#2](https://webneko.dev/posts/enter-the-second-vue-js-nuxt-meetup-in-osaka) | [大阪](https://vuekansai.connpass.com/event/112900/) | 52 | - | 16 |
 | [#1](https://webneko.dev/posts/enter-the-first-vue-js-nuxt-meetup-in-kyoto) | [京都](https://vuekansai.connpass.com/event/110542/) | 28 | - | 6 |
 
 ※ 参加者は最終的にキャンセルした者を含む。また回によってはキャンセル待ちによって参加できなかった者も含む。
