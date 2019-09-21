@@ -22,7 +22,8 @@ jobs:
           npm install eslint \
           eslint-plugin-vue
       script:
-        - node_modules/eslint/bin/eslint.js docs/.vuepress/
+#        - node_modules/eslint/bin/eslint.js docs/.vuepress/
+        - npx eslint ./docs/.vuepress/ --ext vue,js
     # Build Compile
     - stage: "compile"
       name: "Build Compile"
