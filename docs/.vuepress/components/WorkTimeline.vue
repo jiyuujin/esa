@@ -19,21 +19,11 @@
 </template>
 
 <script>
-import ApolloClient from 'apollo-client'
-import { HttpLink } from 'apollo-link-http'
-import { InMemoryCache } from 'apollo-cache-inmemory'
-import gql from 'graphql-tag'
-import fetch from 'node-fetch'
+import { fetchProfile } from '../services/profile'
 import dayjs from 'dayjs'
+import 'dayjs/locale/ja'
 
-const apolloClient = new ApolloClient({
-  link: new HttpLink({
-    /* eslint no-undef: 0 */
-    uri: process.env.GRAPH_API || 'https://api.graph.cool/simple/v1/cjr94yoay4hds0196reyj9lke',
-    fetch
-  }),
-  cache: new InMemoryCache()
-})
+dayjs.locale('ja')
 
 export default {
   data() {
@@ -42,22 +32,8 @@ export default {
     }
   },
   async mounted() {
-    await apolloClient.query({
-      query: gql`
-        query {
-          allWorks(orderBy: startAt_DESC) {
-            id
-            startAt
-            endAt
-            title
-            description
-          }
-        }
-      `,
-    })
-    .then(res => {
-      this.allWorks = res.data.allWorks
-    })
+    const responseData = await fetchProfile()
+    this.allWorks = responseData.data.allWorks
   },
   methods: {
     getDateFormat(d) {
