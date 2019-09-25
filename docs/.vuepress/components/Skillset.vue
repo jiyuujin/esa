@@ -2,24 +2,21 @@
   <div>
     <ul v-for="item in allSkills" :key="item.id">
       <li>
-        <progress-bar
-            :background-color="item.color"
-            :title="item.name"
-            :ratio="item.ratio"
-        ></progress-bar>
+        <j-progress-bar
+          :background-color="item.color"
+          text-color="#fff"
+          :title="item.name"
+          :ratio="item.ratio"
+        ></j-progress-bar>
       </li>
     </ul>
   </div>
 </template>
 
 <script>
-import ProgressBar from './ProgressBar'
 import { fetchProfile } from '../services/profile'
 
 export default {
-  components: {
-    ProgressBar
-  },
   data() {
     return {
       allSkills: null
