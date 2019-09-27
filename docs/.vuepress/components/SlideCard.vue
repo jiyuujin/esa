@@ -1,5 +1,6 @@
 <template>
   <div class="slides">
+    <j-spinner :is-loading="!allActivities"></j-spinner>
     <div
         v-for="slide in allActivities"
         :key="slide.id"

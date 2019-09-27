@@ -1,5 +1,6 @@
 <template>
   <div>
+    <j-spinner :is-loading="!allSkills"></j-spinner>
     <ul v-for="item in allSkills" :key="item.id">
       <li>
         <j-progress-bar

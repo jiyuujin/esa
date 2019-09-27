@@ -1,5 +1,6 @@
 <template>
   <div>
+    <j-spinner :is-loading="!allWorks"></j-spinner>
     <ul v-for="item in allWorks" :key="item.id">
       <li>
         <p class="work-timeline-date">
