@@ -29,6 +29,8 @@ export default {
           return `https://gitlab.com/${name}`
         case 'bitbucket':
           return `https://bitbucket.org/${name}`
+        case 'npm':
+          return `https://npmjs.com/~${name}`
         default:
           return ''
       }
