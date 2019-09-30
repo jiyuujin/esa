@@ -57,13 +57,14 @@ export default {
 <style scoped>
 .slides {
   display: flex;
-  flex-flow: row wrap;
+  justify-content:space-between;
+  flex-wrap: wrap;
 }
 
 .slides:after {
   content: "";
   display: block;
-  width: 31%;
+  width: 50%;
 }
 
 .slide-card {
