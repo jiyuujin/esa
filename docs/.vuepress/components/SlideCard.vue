@@ -1,8 +1,8 @@
 <template>
   <div class="slides">
-    <j-spinner :is-loading="!allActivities"></j-spinner>
+    <j-spinner :is-loading="!list"></j-spinner>
     <div
-        v-for="slide in allActivities"
+        v-for="slide in list"
         :key="slide.id"
         class="slide-card"
     >
@@ -28,23 +28,16 @@
 </template>
 
 <script>
-import { fetchProfile } from '../services/profile'
 import dayjs from 'dayjs'
 import 'dayjs/locale/ja'
 
 dayjs.locale('ja')
 
 export default {
-  data() {
-    return {
-      allActivities: null
+  props: {
+    list: {
+      type: Array
     }
-  },
-  async mounted() {
-    const responseData = await fetchProfile()
-    this.allActivities = responseData.data
-      .allActivities
-      .filter(activity => activity.enabled === true)
   },
   methods: {
     formatDate(d) {

@@ -26,6 +26,11 @@ export const fetchProfile = async () => {
                     name
                     ratio
                 }
+                allSocials(orderBy: service_DESC) {
+                    id
+                    username
+                    service
+                }
             }
         `
     })

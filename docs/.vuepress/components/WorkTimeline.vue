@@ -1,7 +1,7 @@
 <template>
   <div>
-    <j-spinner :is-loading="!allWorks"></j-spinner>
-    <ul v-for="item in allWorks" :key="item.id">
+    <j-spinner :is-loading="!list"></j-spinner>
+    <ul v-for="item in list" :key="item.id">
       <li>
         <p class="work-timeline-date">
           {{ getDateFormat(item.startAt) }}
@@ -23,21 +23,16 @@
 </template>
 
 <script>
-import { fetchProfile } from '../services/profile'
 import dayjs from 'dayjs'
 import 'dayjs/locale/ja'
 
 dayjs.locale('ja')
 
 export default {
-  data() {
-    return {
-      allWorks: null
+  props: {
+    list: {
+      type: Array
     }
-  },
-  async mounted() {
-    const responseData = await fetchProfile()
-    this.allWorks = responseData.data.allWorks
   },
   methods: {
     getDateFormat(d) {

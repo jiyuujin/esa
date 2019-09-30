@@ -1,7 +1,7 @@
 <template>
   <div>
-    <j-spinner :is-loading="!allSkills"></j-spinner>
-    <ul v-for="item in allSkills" :key="item.id">
+    <j-spinner :is-loading="!list"></j-spinner>
+    <ul v-for="item in list" :key="item.id">
       <li>
         <j-progress-bar
           :background-color="item.color"
@@ -15,17 +15,11 @@
 </template>
 
 <script>
-import { fetchProfile } from '../services/profile'
-
 export default {
-  data() {
-    return {
-      allSkills: null
+  props: {
+    list: {
+      type: Array
     }
-  },
-  async mounted() {
-    const responseData = await fetchProfile()
-    this.allSkills = responseData.data.allSkills
   }
 }
 </script>
