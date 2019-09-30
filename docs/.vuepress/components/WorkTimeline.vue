@@ -58,6 +58,11 @@ ul > li {
   margin-bottom: 60px;
 }
 
+.work-timeline-status {
+  text-align: right;
+  color: #d9534f;
+}
+
 @media (min-width : 640px) {
   ul > li {
     overflow: hidden;
@@ -92,8 +97,6 @@ ul > li {
   }
 
   .work-timeline-status {
-    text-align: right;
-    color: #d9534f;
     margin-top: 24px;
   }
 }
