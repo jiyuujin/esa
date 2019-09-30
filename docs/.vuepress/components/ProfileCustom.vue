@@ -12,10 +12,10 @@
 
 <script>
 import { fetchProfile } from '../services/profile'
-const SocialAccount = () => import('./SocialAccount.vue')
-const Skillset = () => import('./Skillset.vue')
-const SlideCard = () => import('./SlideCard.vue')
-const WorkTimeline = () => import('./WorkTimeline.vue')
+import SocialAccount from './SocialAccount.vue'
+import Skillset from './Skillset.vue'
+import SlideCard from './SlideCard.vue'
+import WorkTimeline from './WorkTimeline.vue'
 
 export default {
   components: {
