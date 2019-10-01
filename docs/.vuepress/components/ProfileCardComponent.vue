@@ -1,6 +1,6 @@
 <template>
   <profile-card
-    name="フロントエンドを中心にばりばり書いて、ゆるふわに交流しているなど。"
+    name="Yuma Kitamura"
     nickname="Web猫ブログ"
     :imgName="imgName"
   ></profile-card>
