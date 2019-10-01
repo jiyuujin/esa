@@ -1,5 +1,7 @@
 # Web猫とは
 
+<ProfileCardComponent></ProfileCardComponent>
+
 [Web猫ブログ](https://webneko.dev/) + [Yuma Kitamura`s 職務経歴書](https://github.com/jiyuujin/Curriculum-Vitae)
 
 ### ひとことでは
