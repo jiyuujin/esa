@@ -73,59 +73,75 @@ export default {
 }
 </script>
 
-<style lang="sass" scoped>
-.base
+<style lang="scss" scoped>
+.base {
     text-align: center;
     background: url(../public/mbp-pixel3.png) no-repeat center center fixed;
     background-size: cover;
+}
 
-.header
-    margin: 0 auto
-    min-height: 100vh
-    display: flex
-    justify-content: center
-    align-items: center
-    text-align: center
-    color #fff
-    h1
-      margin-bottom 20px
-      font-size 4vmax
-      line-height 1.3
-      font-weight 300
-    h2
-      font-size 2vmin
-      line-height 1.5
-      margin-bottom 30px
-    .social-menu
-      padding 28px 0
-      ul
-        width calc(100% - 40px)
-        padding 0
-        margin 0 auto
-        li
-          padding 0
-          margin 0 20px
-          list-style none
-          display inline-block
-          a
-            color #fff
-    .top-menu
-      padding 28px 0
-      ul
-        width calc(100% - 40px)
-        padding 0
-        margin 0 auto
-        li
-          padding 0
-          margin 0 20px
-          list-style none
-          a
-            color #fff
+.header {
+    margin: 0 auto;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    h1 {
+      margin-bottom: 20px;
+      font-size: 4vmax;
+      line-height: 1.3;
+      font-weight: 300;
+    }
+    h2 {
+      font-size: 2vmin;
+      line-height: 1.5;
+      margin-bottom: 30px;
+    }
+    .social-menu {
+      padding: 28px 0;
+      ul {
+        width: calc(100% - 40px);
+        padding: 0;
+        margin: 0 auto;
+        li {
+          padding: 0;
+          margin: 0 20px;
+          list-style: none;
+          display: inline-block;
+          a {
+            color: #fff;
+          }
+        }
+      }
+    .top-menu {
+      padding: 28px 0;
+      ul {
+        width: calc(100% - 40px);
+        padding: 0;
+        margin: 0 auto;
+        li {
+          padding: 0;
+          margin: 0 20px;
+          list-style: none;
+          a {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
 
-@media screen and (min-width: 400px)
-  .social-menu
-    ul
-      width calc(33% - 10px)
-      li
-        margin 0
+@media screen and (min-width: 400px) {
+  .social-menu {
+    ul {
+      width: calc(33% - 10px)
+      li {
+        margin: 0
+      }
+    }
+  }
+}
 </style>
