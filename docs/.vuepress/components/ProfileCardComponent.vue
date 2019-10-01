@@ -10,6 +10,7 @@
 export default {
   data() {
     return {
+      /* eslint-disable no-undef */
       imgName: require('../public/bakeneko2.png')
     }
   }
