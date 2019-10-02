@@ -32,6 +32,69 @@
 
 ※ 参加者は最終的にキャンセルした者を含む。また回によってはキャンセル待ちによって参加できなかった者も含む。
 
+### [kansai.ts](https://kansaits.connpass.com/) #3
+
+#### ブログ
+
+### [typescript-jp](https://typescript-jp.connpass.com/) #3
+
+- [安全性の極北から見るTypeScript](https://speakerdeck.com/uhyo/an-quan-xing-falseji-bei-karajian-rutypescript)
+- [TypeScript製ライブラリと開発体験](https://akito0107.github.io/slides/#slide=1)
+
+#### ブログ
+
+### [kansai.ts](https://kansaits.connpass.com/) #2
+
+9/6 (Fri) 開催
+
+- [ざっくりLSP](https://scrapbox.io/mrsekut-p/%E3%81%96%E3%81%A3%E3%81%8F%E3%82%8ALSP)
+- [C#erがTypeScriptでフロントエンドに挑戦している話](https://speakerdeck.com/masui_masanori/c-number-ergatypescriptdehurontoendonitiao-zhan-siteiruhua)
+- [🎉 祝! GA! 🎉 AWSCDK for TypeScript](https://docs.google.com/presentation/d/18vgUTXzcF6eofp3uLd-ZVmcaKsEYkTS-QjWQLXxCwBc/edit#slide=id.g5faa9da147_1_0)
+- [TypeScriptでCLIアプリケーション開発](https://www.slideshare.net/ShutoSuzuki/typescriptcli)
+- [GraphQLで使うデータに TypeScriptで型を定義する](https://speakerdeck.com/kamiyam/graphqldeshi-udetani-typescriptdexing-woding-yi-suru)
+- [TypeScriptの型定義をPRする技術](https://speakerdeck.com/ypresto/typescriptfalsexing-ding-yi-woprsuruji-shu)
+- [TSLint will be deprecated. Migration to typescript-eslint](https://speakerdeck.com/masashi/number-kansaits-2)
+
+#### ブログ
+- [KANSAI.TS #2 を開催しました！](https://webneko.dev/posts/enter-the-kansai-ts-2-in-osaka)
+
+### [typescript-jp](https://typescript-jp.connpass.com/) #2
+
+7/10 (Wed) 開催
+
+- [Meta Library VS Meta Type Definitions](https://speakerdeck.com/takefumiyoshii/meta-library-vs-meta-type-definitions)
+- [[WIP] 非破壊TypeScript](https://gist.github.com/mizchi/1b5c45b50ca0df3e78d9f7697c336ecc)
+
+#### ブログ
+- [TypeScript Meetup #2 Report](https://typescript-jp.dev/meetup-002-report/)
+
+### [typescript-jp](https://typescript-jp.connpass.com/) #1
+
+6/18 (Tue) 開催
+
+- ["型パズル"との付き合い方](https://talks.leko.jp/type-puzzle-world/#0)
+- [Modernizing Pixiv](https://docs.google.com/presentation/d/e/2PACX-1vQck4DKc3GBrfDU_LJYRwuBAaRBlFTgJD2_k523Ximoi5juNRIX6TrjRF5zR4A6xQ6czlBLudgu4qHO/pub?slide=id.p)
+- [Build 2019 update](https://www.slideshare.net/KenichiroNakamura/typescript-meetup-1-build-2019-update)
+- [TypeScript Server Side Anatomy](https://quramy.github.io/tsjp-resources/#slide=1)
+
+#### ブログ
+[TypeScript Meetup #1 Report](https://typescript-jp.dev/meetup-001-report/)
+
+### [kansai.ts](https://kansaits.connpass.com/) #1
+
+6/10 (Mon) 開催
+
+- [Advanced built-in types](https://speakerdeck.com/masashi/number-kansaits-1/)
+- [AWS CDK for TypeScriptを紹介するぜ](https://master.d1r9qwzhk27es2.amplifyapp.com/)
+- [ざっくりAssemblyScript](https://scrapbox.io/mrsekut-p/%E3%81%96%E3%81%A3%E3%81%8F%E3%82%8AAssemblyScript)
+- [Alexaスキル開発で TypeScriptをはじめよう](https://speakerdeck.com/hideokamoto/kansaits01)
+- [Cognitive Complexity でコードの複雑さを定量的に計測しよう](https://www.slideshare.net/ShutoSuzuki/cognitive-complexity-149117241)
+- [【VSCode Remote】10秒でNuxt環境を構築【脱WebStorm】](https://qiita.com/relu/items/defde8de8c4d21af662f)
+
+#### ブログ
+- [kansai.ts #1 を開催しました！](https://webneko.dev/posts/enter-the-kansai-ts-1-in-osaka)
+- [【勉強会 雑なまとめ】関西のTyepScirpt勉強会 kansai.ts #1 に参加してきました](https://nkgr.hatenablog.com/entry/2019/06/10/213500)
+
 ## React
 
 立ち上げてませんが、企画・運営に携わったので、記録しておきます。
