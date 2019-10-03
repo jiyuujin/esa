@@ -70,11 +70,11 @@
 
 ### [typescript-jp](https://typescript-jp.connpass.com/)
 
-#### TypeScript JP #4
+#### typescript-jp #4
 
 決まり次第
 
-#### TypeScript JP #3
+#### typescript-jp #3
 
 - [メルペイのTypeScript活用](https://drive.google.com/file/d/1HdRAzv_Mq24gTRz6WHC13sRASaF2O9Rw/view)
 - [安全性の極北から見るTypeScript](https://speakerdeck.com/uhyo/an-quan-xing-falseji-bei-karajian-rutypescript)
@@ -82,7 +82,7 @@
 
 ##### ブログ
 
-#### TypeScript JP #2
+#### typescript-jp #2
 
 7/10 (Wed) 開催
 
@@ -92,7 +92,7 @@
 ##### ブログ
 - [TypeScript Meetup #2 Report](https://typescript-jp.dev/meetup-002-report/)
 
-#### TypeScript JP #1
+#### typescript-jp #1
 
 6/18 (Tue) 開催
 
