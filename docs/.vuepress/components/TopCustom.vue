@@ -20,6 +20,11 @@
                 <github-icon/>
               </a>
             </li>
+            <li>
+              <a href="https://gitlab.com/jiyuujin">
+                <gitlab-icon/>
+              </a>
+            </li>
           </ul>
         </div>
         <div class="top-menu">
@@ -41,7 +46,7 @@
 
 <script>
 // https://vue-feather-icons.netlify.com/
-import { TwitterIcon, GithubIcon } from 'vue-feather-icons'
+import { TwitterIcon, GithubIcon, GitlabIcon } from 'vue-feather-icons'
 
 const LINKS = [
   {
@@ -61,7 +66,8 @@ const LINKS = [
 export default {
   components: {
     TwitterIcon,
-    GithubIcon
+    GithubIcon,
+    GitlabIcon
   },
   data() {
     return {
@@ -108,16 +114,15 @@ h2 {
 }
 
 .social-menu ul {
-  width: calc(100% - 40px);
-  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 0 auto;
 }
 
 .social-menu li {
   padding: 0;
-  margin: 0 20px;
   list-style: none;
-  display: inline-block;
 }
 
 .social-menu a {
