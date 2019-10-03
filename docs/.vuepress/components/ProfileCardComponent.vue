@@ -1,7 +1,7 @@
 <template>
   <profile-card
     name="Yuma Kitamura"
-    nickname="Web猫ブログ"
+    nickname="Web猫"
     :imgName="imgName"
   ></profile-card>
 </template>
