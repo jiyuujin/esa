@@ -11,7 +11,7 @@
           {{ slide.title }}
         </div>
         <div class="description">
-          {{ formatDate(slide.created_at) }} {{ slide.event }} で登壇させていただいております。
+          {{ formatDate(slide.time) }} {{ slide.event }} で登壇させていただいております。
         </div>
       </div>
       <div class="slide-card-link">
