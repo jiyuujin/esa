@@ -8,25 +8,6 @@
         <h2>
           {{ footer }}
         </h2>
-        <div class="social-menu">
-          <ul>
-            <li>
-              <a href="https://twitter.com/jiyuujinlab">
-                <twitter-icon/>
-              </a>
-            </li>
-            <li>
-              <a href="https://github.com/jiyuujin">
-                <github-icon/>
-              </a>
-            </li>
-            <li>
-              <a href="https://gitlab.com/jiyuujin">
-                <gitlab-icon/>
-              </a>
-            </li>
-          </ul>
-        </div>
         <div class="top-menu">
           <ul
             v-for="link in links"
@@ -45,9 +26,6 @@
 </template>
 
 <script>
-// https://vue-feather-icons.netlify.com/
-import { TwitterIcon, GithubIcon, GitlabIcon } from 'vue-feather-icons'
-
 const LINKS = [
   {
     name: 'Document',
@@ -64,11 +42,6 @@ const LINKS = [
 ]
 
 export default {
-  components: {
-    TwitterIcon,
-    GithubIcon,
-    GitlabIcon
-  },
   data() {
     return {
       siteTitle: 'ねこのえさ',
@@ -109,26 +82,6 @@ h2 {
   margin-bottom: 30px;
 }
 
-.social-menu {
-  padding: 28px 0;
-}
-
-.social-menu ul {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.social-menu li {
-  padding: 0;
-  list-style: none;
-}
-
-.social-menu a {
-  color: #fff;
-}
-
 .top-menu {
   padding: 28px 0;
 }
@@ -147,14 +100,5 @@ h2 {
 
 .top-menu a {
   color: #fff;
-}
-
-@media screen and (min-width: 400px) {
-  .social-menu ul {
-      width: calc(33% - 10px);
-  }
-  .social-menu li {
-    margin: 0;
-  }
 }
 </style>
