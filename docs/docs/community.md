@@ -5,9 +5,9 @@
 - [v-kansai connpass](https://vuekansai.connpass.com/)
 - [vuejs-jp slack v-kansai channel](https://vuejs-jp.slack.com/)
 
-| # | 開催日 | イベントページ | 登壇スライドや技術ブログなど | 参加者 / 登壇者 |
+| # | 開催日 | イベントページ | 登壇スライドや技術ブログなど | 参加者 (恐らく) / 登壇者 |
 |:---|:---|:---|:---|:---|
-| #11 | 2019/10/09 | [京都](https://vuekansai.connpass.com/event/144194/) | | |
+| [#11](https://webneko.dev/posts/enter-the-v-kansai-11-with-kyoto-dev-cafe) | 2019/10/09 | [京都](https://vuekansai.connpass.com/event/144194/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-11) | 26 / 5 |
 | [#10](https://webneko.dev/posts/enter-the-v-kansai-10-in-osaka) | 2019/09/18 | [大阪](https://vuekansai.connpass.com/event/143861/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-10) | 20 / 6 |
 | [#9](https://webneko.dev/posts/enter-the-v-kansai-9-with-fjug-osaka) | 2019/08/21 | [京都](https://vuekansai.connpass.com/event/137411/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-9) | 38 / 9 |
 | [#8](https://webneko.dev/posts/enter-the-v-kansai-8-in-osaka) | 2019/07/24 | [大阪](https://vuekansai.connpass.com/event/136514/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-8) | 28 / 7 |
