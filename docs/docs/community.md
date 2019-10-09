@@ -104,6 +104,20 @@
 ##### ブログ
 [TypeScript Meetup #1 Report](https://typescript-jp.dev/meetup-001-report/)
 
+### [fukuoka.ts](https://fukuokats.connpass.com/)
+
+#### fukuoka.ts #1
+
+6/18 (Tue) 開催
+
+- [TypeScriptとORM](https://speakerdeck.com/dojineko/orm-with-typescript)
+- [TypeScriptで作るGithubApps](https://speakerdeck.com/kimromi/make-github-apps-by-typescript)
+- [TypeScriptでMixinパターンを使う](https://speakerdeck.com/linyows/mixins-pattern-for-typescript)
+- [NestJS × TypeORM](https://speakerdeck.com/tascript/nestjs-typeorm)
+- [Vue.js × TypeScriptで class style componentを廃止した話](https://speakerdeck.com/sunecosuri/migrated-class-style-component-for-vuejs-and-typescrpit)
+- [TypeScript - Dart間で型を共有する](https://speakerdeck.com/ikasoumen/sharing-type-definitions-between-typescript-and-dart)
+- [Conditional Typesで型安全なルーターを作る](https://scrapbox.io/odiak/Conditional_Types%E3%81%A7%E5%9E%8B%E5%AE%89%E5%85%A8%E3%81%AA%E3%83%AB%E3%83%BC%E3%82%BF%E3%83%BC%E3%82%92%E4%BD%9C%E3%82%8B)
+
 ## React
 
 立ち上げてませんが、企画・運営に携わったので、記録しておきます。
