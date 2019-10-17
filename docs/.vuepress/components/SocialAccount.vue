@@ -31,6 +31,8 @@ export default {
           return `https://bitbucket.org/${name}`
         case 'npm':
           return `https://npmjs.com/~${name}`
+        case 'jira':
+          return `https://${name}.atlassian.net`
         default:
           return ''
       }
