@@ -41,6 +41,10 @@ module.exports = {
         link: '/docs/',
       },
       {
+        text: '個人スクラム',
+        link: '/scrum/',
+      },
+      {
         text: 'ブログ',
         link: 'https://webneko.dev/',
       }
@@ -57,6 +61,16 @@ module.exports = {
             'devops',
             'guide',
             'community'
+          ]
+        }
+      ],
+      '/scrum/': [
+        {
+          title: '個人スクラム',
+          collapsable: false,
+          children: [
+            '',
+            '2019-10-25'
           ]
         }
       ]
