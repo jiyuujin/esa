@@ -1,11 +1,18 @@
 # Guide
 
-## Vue CLI
+## Vue.js
 
-:::warning vue-cli@v3 をインストールします。
-今回 webpack4ベースの vue-cli@v3を使っています。
+1. [Vueインスタンスを生成する](https://jp.vuejs.org/v2/guide/instance.html)
+2. [個別のDOMに突っ込んで描画する](https://webneko.dev/posts/design-vue-components-to-individual-dom)
 
-間違っても `v2` をインストールしないよう、注意してください。
+### Vue CLI
+
+:::tip Vue CLI v4 🎉
+具体的な変更内容については [公式ページ](https://cli.vuejs.org/migrating-from-v3/#migrating-from-v3) をご確認いただければと思います。
+:::
+
+:::warning Vue CLI v3 のインストール
+間違ってもv2をインストールしないよう、注意してください。
 
 これを前提として、 Node.js `v8.9.0` 以上であることを確認してください。
 
@@ -26,11 +33,11 @@ vue create vue-cli-sample
 
 TypeScriptを使う場合は `Manually select features` を選択します。オプションは後からでも追加できるので、とりあえず適当に入れておきましょう。
 
-### Netlifyにデプロイ
+#### Netlifyにデプロイ
 
-簡単に動作確認する場合、Netlifyを使うのがオススメ。
+簡単に動作確認する場合Netlifyを使うのがオススメ。
 
-事前に設定ファイル (.toml) を準備します。
+事前に設定ファイル `.toml` を準備します。
 
 ```toml
 [build]
@@ -45,13 +52,13 @@ command = "npm run build"
 vue-cli-service build
 ```
 
-#### Netlify Consoleより操作
+##### Netlify Consoleより操作
 
 Github等のアカウントを所有していれば OK [Netlify](https://www.netlify.com/)より、サインアップできます。
 
 <img :src="$withBase('/netlify.png')" alt="netlify">
 
-### Gitlab-CIを回す
+#### Gitlab-CIの設定
 
 [Gitlab-CI](https://docs.gitlab.com/ee/ci/) では [Node Image](https://hub.docker.com/_/node/) を前提にして、ステージを Lint / UnitTest / Transpile に分けて対応します。
 
@@ -68,9 +75,9 @@ stages:
 
 少しハマったこととして package-lock.json等の `.lock` ファイルを .gitignoreに入れないよう注意します。
 
-#### Lintを設定する
+##### Lintの設定
 
-TypeScriptを使っているので、欠かさず `@typescript-eslint` をインストール、チェックを進めます。
+TypeScriptを使っているので欠かさず `@typescript-eslint` をインストールします。
 
 ```yaml
 "ESLint":
@@ -90,9 +97,9 @@ TypeScriptを使っているので、欠かさず `@typescript-eslint` をイン
       - node_modules/
 ```
 
-#### Unitテストを設定する
+##### Unitテストの設定
 
-`npm run test:unit` を叩くよう設定します。
+`npm run test:unit` を叩きます。
 
 ```yaml
 "Unit Test":
@@ -110,9 +117,9 @@ TypeScriptを使っているので、欠かさず `@typescript-eslint` をイン
       - node_modules/
 ```
 
-#### トランスパイルする
+##### トランスパイル
 
-Webアプリケーションのデプロイは [vue-cli@v3](https://cli.vuejs.org/guide/installation.html) | [Gitlab-CIへのデプロイ](https://cli.vuejs.org/guide/deployment.html#gitlab-pages) をご確認ください。
+Webアプリケーションのデプロイは [Vue CLI](https://cli.vuejs.org/guide/installation.html) | [Gitlab-CIへのデプロイ](https://cli.vuejs.org/guide/deployment.html#gitlab-pages) をご確認ください。
 
 ```yaml
 "Transpile":
@@ -142,7 +149,7 @@ Webアプリケーションのデプロイは [vue-cli@v3](https://cli.vuejs.org
 
 `npm run build` を叩くことで `dist` に吐き出さる仕組みです。
 
-#### デプロイ
+##### デプロイ
 
 Netlify Console [Site Settings] で `API ID` を `NETLIFY_SITE_ID` 確認します。
 
@@ -168,51 +175,20 @@ Netlify Console [Site Settings] で `API ID` を `NETLIFY_SITE_ID` 確認しま�
     - master
 ```
 
-### vue.config.jsの色々
+### Nuxt
 
-- [vue.config.jsの色々](https://webneko.dev/posts/vue-config-and-more)
-
-### Vueの描画方法
-
-- Vueインスタンスを生成する
-- [個別のDOMに突っ込んで描画する](https://webneko.dev/posts/design-vue-components-to-individual-dom)
-
-#### wrapperとして吐き出す
-
-`target` オプションに `wc` を付けてビルドして wrapperとして吐き出す方法があります。
-
-```bash
-# Bundle Build
-cross-env VUE_CLI_CSS_SHADOW_MODE=true vue-cli-service build --target wc --name custom-element ./front/src/main.js
-```
-
- Componentごと DOMを準備することで、テンプレートファイル (.blade.php/.tpl) などに、吐き出した Vue Componentを設定して使います。
-
-```ts
-import Vue from 'vue'
-import wrap from '@vue/web-component-wrapper'
-
-const HelloWorldElement = wrap(Vue, () => import(`./components/HelloWorld.vue`))
-const LineChartElement = wrap(Vue, () => import(`./components/chart/LineChart.vue`))
-
-window.customElements.define('hello-world', HelloWorldElement)
-window.customElements.define('line-chart', LineChartElement)
-```
-
-## Nuxt
-
-Vue CLI同様、 `@vue/cli` をインストールする必要があります。プロジェクト作成は、[Nuxt Installation](https://ja.nuxtjs.org/guide/installation)をご確認ください。
+Vue CLI同様 `@vue/cli` をインストールする必要があります。プロジェクト作成は、[Nuxt Installation](https://ja.nuxtjs.org/guide/installation)をご確認ください。
 
 ```bash
 # Vue CLI
 npx create-nuxt-app nuxt-sample
 ```
 
-### Netlifyにデプロイ
+#### Netlifyにデプロイ
 
-簡単に動作確認する場合、Netlifyを使うのがオススメ。
+簡単に動作確認する場合Netlifyを使うのがオススメ。
 
-事前に設定ファイル (.toml) を準備します。
+事前に設定ファイル `.toml` を準備します。
 
 ```toml
 [build]
@@ -238,7 +214,7 @@ Quasarを除いて、大体経験あり。
 - [Tailwind CSS](https://tailwindcss.com/)
 - [Quasar](https://quasar.dev/)
 
-### bootstrap-vue
+### Bootstrap-Vue
 
 `bootstrap-vue` をインストールします。
 
@@ -274,7 +250,6 @@ Scoped CSSを利用して views/Index.vue で読み込みます。
 
 2. `b-popover` でイベント発火しない
    - `b-dropdown` で代用
-
 :::
 
 ### Tailwind CSS
@@ -282,9 +257,7 @@ Scoped CSSを利用して views/Index.vue で読み込みます。
 - [Nuxt Adminに Tailwind CSSを導入](https://webneko.dev/posts/redesigned-nuxt-admin-used-tailwindcss)
 - [Tailwind CSS v1.0 リリース🎉](https://webneko.dev/posts/major-update-to-tailwindcss-v1)
 
-## Unitテスト
-
-### Jestを使う
+## VueとJestを使う
 
 並列実行されていること。カバレッジやスナップショットのように、プラグイン不要で内製されていること。 TypeScriptとの親和性も高いなど、テストツールに [Jest](https://jestjs.io/ja/) を採用するメリットは多いです。
 
@@ -313,7 +286,7 @@ module.exports = {
 }
 ```
 
-#### jest.config.jsを書く
+### jest.config.jsを書く
 
 基本的に特異な設定要らず。
 
@@ -348,14 +321,6 @@ module.exports = {
 }
 ```
 
-スナップショットをとる場合は以下の通りです。
-
-```js
-module.exports = {
-    snapshotSerializers: ['jest-serializer-vue'],
-}
-```
-
 テストを書くための準備はこれにて完了しました。
 
 テストの対象は `src/components` に所属するコンポーネントなど。 Vuexを使う場合は `src/store` に所属するモジュールとなります。一方これらのコンポーネント、モジュールに対するテストを `tests/unit` で書きます。
@@ -377,126 +342,9 @@ module.exports = {
 │   │   │   ├── atoms
 ```
 
-#### Component向けテストを書く
+### Component向けテストを書く
 
-#### Vuex向けテストを書く
-
-## Packages一覧
-
-### vue-router
-
-詳しくは [vue-router](https://router.vuejs.org/ja/installation.html) をご確認ください。ただし [Nuxt](https://ja.nuxtjs.org/) では既に入っています。
-
-```bash
-# vue-router
-yarn add vue-router
-```
-
-ちなみに一々、ルーティングを書かなくても自動化してくれる [vue-cli-plugin-auto-routing](https://github.com/ktsn/vue-cli-plugin-auto-routing) もありますが、この場では割愛します。
-
-サーバサイドで準備しているルーティングに合わせてルーティングリストを作成します。また動的ルーティングは、 `:id` 等のように `path` の後ろに設定すると良いです。
-
-```ts
-import HelloWorld from './components/HelloWorld.vue'
-import ProductEdit from './components/product/Edit.vue'
-
-const routes = [
-    { path: '/hq_products/test', component: HelloWorld },
-    { path: '/hq_products/edit/:id', component: ProductEdit },
-];
-```
-
-### vue-i18n
-
-基本的に Vue CLI では `add` するだけで良い
-
-```bash
-# vue-i18n
-vue add i18n
-```
-
-と言えば済む話ですが、簡単に解説を😀
-
-事前に `i18n` ディレクトリ下に `.json` を設定、個別の `key` にアクセスすることで多言語対応を実現することができます。
-
-#### pluginsを見よう
-
-plugins/i18n.tsを作ります。
-
-デフォルトの言語だけではなく、仮に `key` が存在しなかった場合の言語も設定します。
-
-```ts
-import Vue from 'vue'
-import VueI18n, { LocaleMessages } from 'vue-i18n'
-
-Vue.use(VueI18n)
-
-export default new VueI18n({
-    locale: process.env.VUE_APP_I18N_LOCALE || 'ja',
-    fallbackLocale: process.env.VUE_APP_I18N_FALLBACK_LOCALE || 'en',
-    messages: loadLocaleMessages()
-})
-```
-
-### vue-chartjs
-
-前提として [vue-cli@v3](https://cli.vuejs.org/) で進めますが、 [nuxt](https://ja.nuxtjs.org/) でも基本的に変わりませんので、広く見ていただければ。🙏
-
-```bash
-# 型定義を含めインストール
-yarn add vue-chartjs chart.js @types/chart.js
-```
-
-適宜 tsconfig.json の `compilerOptions` に追加します。
-
-```json
-{
-  "compilerOptions": {
-    "types": [
-      "@types/chart.js"
-    ]
-  }
-}
-```
-
-基本的に下準備はこれだけ。
-
-#### Componentでこうやって使う
-
-詳しくは以下リンクをご確認いただければ、と思います。
-
-<a class="link-preview" href="https://vue-chartjs.org/guide/#example">vue-chartjsを使ったサンプルなど</a>
-
-基本的には `datasets` と `options` を渡してあげることで描画してくれる仕組みです。
-
-```ts
-import Vue from 'vue'
-import ChartData from 'chart.js'
-import { HorizontalBar } from 'vue-chartjs'
-
-const chartData: ChartData.ChartData = {
-    labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
-    datasets: [
-        {
-            label: 'Data One',
-            backgroundColor: '#42b883',
-            data: [40, 20, 12, 39, 10, 40, 39, 80, 40, 20, 12, 11]
-        }
-    ]
-}
-
-const chartOptions: ChartData.ChartOptions = {
-    responsive: true,
-    maintainAspectRatio: false
-}
-
-export default Vue.extend({
-    extends: HorizontalBar,
-    mounted () {
-        this.renderChart(chartData, chartOptions)
-    }
-})
-```
+### Vuex向けテストを書く
 
 ## 書籍
 
