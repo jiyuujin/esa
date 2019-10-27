@@ -33,6 +33,8 @@ export default {
           return `https://npmjs.com/~${name}`
         case 'jira':
           return `https://${name}.atlassian.net`
+        case 'slides':
+          return `https://slides.com/${name}`
         default:
           return ''
       }
