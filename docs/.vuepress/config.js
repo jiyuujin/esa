@@ -58,7 +58,6 @@ module.exports = {
           children: [
             '',
             'infra',
-            'devops',
             'guide',
             'community'
           ]
