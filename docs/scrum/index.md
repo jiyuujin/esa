@@ -1,12 +1,10 @@
-# 個人スクラム
+# Scrum
 
-2019/10/18よりスプリントを回します！
+Since 2019/10/18
 
-元ネタは [Github Issue](https://github.com/jiyuujin/esa/issues/25) より始まりました
-
-1. 実績
-   - できたことを書く
-2. 振り返り
-   - 気付いたこと、気になったことなど随時書く
-3. やりたいこと
-   - これからやりたいことを書く
+1. Works
+   - something i can
+2. Feedback
+   - my notices
+3. Wanna
+   - something i wanna
