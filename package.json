@@ -19,7 +19,7 @@
     "vuepress": "1.2.0"
   },
   "devDependencies": {
-    "eslint": "6.5.1",
+    "eslint": "6.6.0",
     "eslint-plugin-vue": "5.2.3"
   }
 }
