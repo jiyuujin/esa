@@ -1,46 +1,46 @@
-# コミュニティ
+# Community
 
 ## Vue
 
 - [v-kansai connpass](https://vuekansai.connpass.com/)
 - [vuejs-jp slack v-kansai channel](https://vuejs-jp.slack.com/)
 
-| # | 開催日 | イベントページ | 登壇スライドや技術ブログなど | 参加者 (恐らく) / 登壇者 |
+| # | date | event page | slides, documents | participants |
 |:---|:---|:---|:---|:---|
-| [#11](https://webneko.dev/posts/enter-the-v-kansai-11-with-kyoto-dev-cafe) | 2019/10/09 | [京都](https://vuekansai.connpass.com/event/144194/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-11) | 26 / 5 |
-| [#10](https://webneko.dev/posts/enter-the-v-kansai-10-in-osaka) | 2019/09/18 | [大阪](https://vuekansai.connpass.com/event/143861/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-10) | 20 / 6 |
-| [#9](https://webneko.dev/posts/enter-the-v-kansai-9-with-fjug-osaka) | 2019/08/21 | [京都](https://vuekansai.connpass.com/event/137411/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-9) | 38 / 9 |
-| [#8](https://webneko.dev/posts/enter-the-v-kansai-8-in-osaka) | 2019/07/24 | [大阪](https://vuekansai.connpass.com/event/136514/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-8) | 28 / 7 |
-| [#7](https://webneko.dev/posts/enter-the-v-kansai-7-in-kyoto) | 2019/06/22 | [京都](https://vuekansai.connpass.com/event/127057/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-7) | 28 / 8 |
-| [#6](https://webneko.dev/posts/enter-the-v-kansai-6-with-monaca-ug-osaka) | 2019/05/21 | [大阪](https://vuekansai.connpass.com/event/126754/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-6) | 17 / 7 |
-| [#5](https://webneko.dev/posts/enter-the-final-v-kansai-of-the-heisei-period) | 2019/04/25 | [京都](https://vuekansai.connpass.com/event/122664/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-5) | 27 / 7 |
-| [#4](https://webneko.dev/posts/enter-the-fourth-v-kansai-vue-js-nuxt-meetup-in-osaka) | 2019/03/22 | [大阪](https://vuekansai.connpass.com/event/121581/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-4) | 49 / 10 |
-| [#3](https://webneko.dev/posts/enter-the-third-v-kansai-vue-js-nuxt-meetup-in-kyoto) | 2019/02/28 | [京都](https://vuekansai.connpass.com/event/114795/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-3) | 25 / 5 |
-| [#2](https://webneko.dev/posts/enter-the-second-vue-js-nuxt-meetup-in-osaka) | 2019/01/19 | [大阪](https://vuekansai.connpass.com/event/112900/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-2) | 52 / 16 |
-| [#1](https://webneko.dev/posts/enter-the-first-vue-js-nuxt-meetup-in-kyoto) | 2018/12/20 | [京都](https://vuekansai.connpass.com/event/110542/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-1) | 28 / 6 |
+| [#11](https://webneko.dev/posts/enter-the-v-kansai-11-with-kyoto-dev-cafe) | 2019/10/09 | [Kyoto](https://vuekansai.connpass.com/event/144194/) | [slides, documents](https://nekohack.github.io/v-kansai/event/#v-kansai-11) | 26 / 5 |
+| [#10](https://webneko.dev/posts/enter-the-v-kansai-10-in-osaka) | 2019/09/18 | [Osaka](https://vuekansai.connpass.com/event/143861/) | [slides, documents](https://nekohack.github.io/v-kansai/event/#v-kansai-10) | 20 / 6 |
+| [#9](https://webneko.dev/posts/enter-the-v-kansai-9-with-fjug-osaka) | 2019/08/21 | [Kyoto](https://vuekansai.connpass.com/event/137411/) | [slides, documents](https://nekohack.github.io/v-kansai/event/#v-kansai-9) | 38 / 9 |
+| [#8](https://webneko.dev/posts/enter-the-v-kansai-8-in-osaka) | 2019/07/24 | [Osaka](https://vuekansai.connpass.com/event/136514/) | [slides, documents](https://nekohack.github.io/v-kansai/event/#v-kansai-8) | 28 / 7 |
+| [#7](https://webneko.dev/posts/enter-the-v-kansai-7-in-kyoto) | 2019/06/22 | [Kyoto](https://vuekansai.connpass.com/event/127057/) | [slides, documents](https://nekohack.github.io/v-kansai/event/#v-kansai-7) | 28 / 8 |
+| [#6](https://webneko.dev/posts/enter-the-v-kansai-6-with-monaca-ug-osaka) | 2019/05/21 | [Osaka](https://vuekansai.connpass.com/event/126754/) | [slides, documents](https://nekohack.github.io/v-kansai/event/#v-kansai-6) | 17 / 7 |
+| [#5](https://webneko.dev/posts/enter-the-final-v-kansai-of-the-heisei-period) | 2019/04/25 | [Kyoto](https://vuekansai.connpass.com/event/122664/) | [slides, documents](https://nekohack.github.io/v-kansai/event/#v-kansai-5) | 27 / 7 |
+| [#4](https://webneko.dev/posts/enter-the-fourth-v-kansai-vue-js-nuxt-meetup-in-osaka) | 2019/03/22 | [Osaka](https://vuekansai.connpass.com/event/121581/) | [slides, documents](https://nekohack.github.io/v-kansai/event/#v-kansai-4) | 49 / 10 |
+| [#3](https://webneko.dev/posts/enter-the-third-v-kansai-vue-js-nuxt-meetup-in-kyoto) | 2019/02/28 | [Kyoto](https://vuekansai.connpass.com/event/114795/) | [slides, documents](https://nekohack.github.io/v-kansai/event/#v-kansai-3) | 25 / 5 |
+| [#2](https://webneko.dev/posts/enter-the-second-vue-js-nuxt-meetup-in-osaka) | 2019/01/19 | [Osaka](https://vuekansai.connpass.com/event/112900/) | [slides, documents](https://nekohack.github.io/v-kansai/event/#v-kansai-2) | 52 / 16 |
+| [#1](https://webneko.dev/posts/enter-the-first-vue-js-nuxt-meetup-in-kyoto) | 2018/12/20 | [Kyoto](https://vuekansai.connpass.com/event/110542/) | [slides, documents](https://nekohack.github.io/v-kansai/event/#v-kansai-1) | 28 / 6 |
 
 ## TypeScript
 
 - [kansai.ts connpass](https://kansaits.connpass.com/)
 - [kansai.ts discord](https://discord.gg/AJPs2Uh)
 
-| # | 開催地 | 参加者 | 出席者 | 登壇者 |
+| # | date | participants | 出席者 | LTs |
 |:---|:---|:---|:---|:---|
 | #3 | - | - | - | - |
-| [#2](https://webneko.dev/posts/enter-the-kansai-ts-2-in-osaka) | [大阪](https://kansaits.connpass.com/event/131541/) | 51| 46 | 10 |
-| [#1](https://webneko.dev/posts/enter-the-kansai-ts-1-in-osaka) | [大阪](https://kansaits.connpass.com/event/130120/) | 40 | - | 7 |
+| [#2](https://webneko.dev/posts/enter-the-kansai-ts-2-in-osaka) | [Osaka](https://kansaits.connpass.com/event/131541/) | 51| 46 | 10 |
+| [#1](https://webneko.dev/posts/enter-the-kansai-ts-1-in-osaka) | [Osaka](https://kansaits.connpass.com/event/130120/) | 40 | - | 7 |
 
-※ 参加者は最終的にキャンセルした者を含む。また回によってはキャンセル待ちによって参加できなかった者も含む。
+※ Some participants include people has canceled, not participate in waiting list
 
 ### [kansai.ts](https://kansaits.connpass.com/)
 
 #### kansai.ts #3
 
-決まり次第
+As soon as decided
 
 #### kansai.ts #2
 
-9/6 (Fri) 開催
+9/6 (Fri) Hosted
 
 - [ざっくりLSP](https://scrapbox.io/mrsekut-p/%E3%81%96%E3%81%A3%E3%81%8F%E3%82%8ALSP)
 - [C#erがTypeScriptでフロントエンドに挑戦している話](https://speakerdeck.com/masui_masanori/c-number-ergatypescriptdehurontoendonitiao-zhan-siteiruhua)
@@ -55,7 +55,7 @@
 
 #### kansai.ts #1
 
-6/10 (Mon) 開催
+6/10 (Mon) Hosted
 
 - [Advanced built-in types](https://speakerdeck.com/masashi/number-kansaits-1/)
 - [AWS CDK for TypeScriptを紹介するぜ](https://master.d1r9qwzhk27es2.amplifyapp.com/)
@@ -72,7 +72,7 @@
 
 #### typescript-jp #4
 
-決まり次第
+As soon as decided
 
 #### typescript-jp #3
 
@@ -84,7 +84,7 @@
 
 #### typescript-jp #2
 
-7/10 (Wed) 開催
+7/10 (Wed) Hosted
 
 - [Meta Library VS Meta Type Definitions](https://speakerdeck.com/takefumiyoshii/meta-library-vs-meta-type-definitions)
 - [[WIP] 非破壊TypeScript](https://gist.github.com/mizchi/1b5c45b50ca0df3e78d9f7697c336ecc)
@@ -94,7 +94,7 @@
 
 #### typescript-jp #1
 
-6/18 (Tue) 開催
+6/18 (Tue) Hosted
 
 - ["型パズル"との付き合い方](https://talks.leko.jp/type-puzzle-world/#0)
 - [Modernizing Pixiv](https://docs.google.com/presentation/d/e/2PACX-1vQck4DKc3GBrfDU_LJYRwuBAaRBlFTgJD2_k523Ximoi5juNRIX6TrjRF5zR4A6xQ6czlBLudgu4qHO/pub?slide=id.p)
@@ -108,7 +108,7 @@
 
 #### fukuoka.ts #1
 
-6/18 (Tue) 開催
+6/18 (Tue) Hosted
 
 - [TypeScriptとORM](https://speakerdeck.com/dojineko/orm-with-typescript)
 - [TypeScriptで作るGithubApps](https://speakerdeck.com/kimromi/make-github-apps-by-typescript)
@@ -124,29 +124,29 @@
 
 - [react.kyoto connpass](https://react-kyoto.connpass.com/)
 
-| # | 開催地 | 参加者 | 出席者 | 登壇者 |
+| # | date | participants | 出席者 | LTs |
 |:---|:---|:---|:---|:---|
 | #4 | - | - | - | - |
 | [#3](https://webneko.dev/posts/enter-the-react-kyoto-v0-3-0) | [大阪](https://react-kyoto.connpass.com/event/137847/) | 44 | - | 5 |
 
-※ 参加者は最終的にキャンセルした者を含む。また回によってはキャンセル待ちによって参加できなかった者も含む。
+※ Some participants include people has canceled, not participate in waiting list
 
-## その他
+## Others
 
-### リモートLT
+### Remote LT
 
-v-kansai [#7](https://webneko.dev/posts/enter-the-v-kansai-7-in-kyoto) で沖縄と京都を繋ぎました。
+Connect to Okinawa at v-kansai [#7](https://webneko.dev/posts/enter-the-v-kansai-7-in-kyoto)
 
-### 支援プログラム
+### Support Program
 
-#### Scrapbox勉強会支援プログラム
+#### Scrapbox Study Group Support Program
 
 [Scrapbox勉強会支援プログラム (Nota inc.)](https://scrapbox.io/study-group-support/)
 
-v-kansai [#3](https://webneko.dev/posts/enter-the-third-v-kansai-vue-js-nuxt-meetup-in-kyoto) や [#7](https://webneko.dev/posts/enter-the-v-kansai-7-in-kyoto) で採用しました。
+Use at v-kansai [#3](https://webneko.dev/posts/enter-the-third-v-kansai-vue-js-nuxt-meetup-in-kyoto) and [#7](https://webneko.dev/posts/enter-the-v-kansai-7-in-kyoto)
 
-#### Put Your Hands Up - 登壇者にフィードバックしよう！
+#### Put Your Hands Up - Let's feedback to LT speakers
 
 [Put Your Hands Up - 登壇者にフィードバックしよう！](https://pyhu.nkgr.app/)
 
-v-kansai [#5](https://webneko.dev/posts/enter-the-final-v-kansai-of-the-heisei-period) で採用しています。
+Use at v-kansai [#5](https://webneko.dev/posts/enter-the-final-v-kansai-of-the-heisei-period)

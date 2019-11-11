@@ -1,10 +1,10 @@
-# Scrum
+# スクラム
 
-Since 2019/10/18
+2019/10/18よりスプリントを回します！
 
-1. Works
-   - something i can
-2. Feedback
-   - my notices
-3. Wanna
-   - something i wanna
+1. 実績
+   - できたことを書く
+2. 振り返り
+   - 気付いたこと、気になったことなど随時書く
+3. やりたいこと
+   - これからやりたいことを書く

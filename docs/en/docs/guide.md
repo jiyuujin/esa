@@ -1,4 +1,4 @@
-# ガイド
+# Guide
 
 [フロント・サーバ構築手順書](https://webneko.dev/posts/the-development-guide-for-fullstack-engineers)
 
@@ -9,7 +9,7 @@
 
 ### Vue CLI
 
-レガシー環境は特に注意が必要です、Node.js `v8.9.0` 以上を確認してください！
+Pay attention to legacy development, confirm to Node.js `v8.9.0`
 
 ```bash
 npm i -g @vue/cli
@@ -17,35 +17,35 @@ npm i -g @vue/cli
 
 [CakePHPにVue導入 - 初期導入編](https://webneko.dev/posts/vue-config-and-more)
 
-## UIフレームワーク
+## UI framework
 
-[Quasar](https://quasar.dev/)を除いて大体経験あり。
+i has used CSS frameworks exclude [Quasar](https://quasar.dev/)
 
 ### Bootstrap-Vue
 
-旧バージョンの `bootstrap` との競合や `jQuery` を使わざるを得ない場面が来るかもしれません。
+Conflict to old `bootstrap` , you must use `jQuery`
 
-1. `b-form-input` で日本語IMEが効かない
-   - [現在は解決](https://github.com/bootstrap-vue/bootstrap-vue/issues/2131)
+1. No `b-form-input`
+   - [Solved Currently](https://github.com/bootstrap-vue/bootstrap-vue/issues/2131)
 
-2. `b-popover` でイベント発火しない
-   - `b-dropdown` で代用
+2. Noe events in `b-popover`
+   - Replace for `b-dropdown`
 
-3. 思い切って自作
+3. i create my own packages
 
 ### Tailwind CSS
 
 - [Tailwind CSS v1.0 リリース🎉](https://webneko.dev/posts/major-update-to-tailwindcss-v1)
 - [Nuxt Adminに Tailwind CSSを導入](https://webneko.dev/posts/redesigned-nuxt-admin-used-tailwindcss)
 
-## VueとJestを使う
+## Use Vue & Jest
 
 [Jest初心者がこれをやった](https://webneko.dev/posts/vue-jest-tips-and-more)
 
-### Component向けテストを書く
+### Test for components
 
-作成中
+As soon as decided
 
-### Vuex向けテストを書く
+### Test for vuex
 
-作成中
+As soon as decided

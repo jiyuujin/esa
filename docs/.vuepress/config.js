@@ -39,65 +39,21 @@ module.exports = {
         docsDir: 'docs',
         nav: [
           {
-            text: 'Document',
+            text: 'ドキュメント',
             link: '/docs/',
           },
           {
-            text: 'Scrum',
+            text: 'スクラム',
             link: '/scrum/',
           },
           {
-            text: 'Webneko Blog',
+            text: 'ブログ',
             link: 'https://webneko.dev/',
           }
         ],
         sidebarDepth: 3,
         sidebar: {
           '/docs/': [
-            {
-              title: 'Document',
-              collapsable: false,
-              children: [
-                '',
-                'infra',
-                'guide',
-                'community'
-              ]
-            }
-          ],
-          '/scrum/': [
-            {
-              title: 'Scrum',
-              collapsable: false,
-              children: [
-                '',
-                '2019-10-25'
-              ]
-            }
-          ]
-        }
-      },
-      '/jp/': {
-        repo: 'jiyuujin/esa',
-        editLinks: false,
-        docsDir: 'docs',
-        nav: [
-          {
-            text: 'ドキュメント',
-            link: '/jp/docs/',
-          },
-          {
-            text: 'スクラム',
-            link: '/jp/scrum/',
-          },
-          {
-            text: 'Web猫ブログ',
-            link: 'https://webneko.dev/',
-          }
-        ],
-        sidebarDepth: 3,
-        sidebar: {
-          '/jp/docs/': [
             {
               title: 'ドキュメント',
               collapsable: false,
@@ -109,7 +65,7 @@ module.exports = {
               ]
             }
           ],
-          '/jp/scrum/': [
+          '/scrum/': [
             {
               title: 'スクラム',
               collapsable: false,
@@ -120,20 +76,64 @@ module.exports = {
             }
           ]
         }
-      }
+      },
+      // '/en/': {
+      //   repo: 'jiyuujin/esa',
+      //   editLinks: false,
+      //   docsDir: 'docs',
+      //   nav: [
+      //     {
+      //       text: 'Docs',
+      //       link: '/en/docs/',
+      //     },
+      //     {
+      //       text: 'Scrum',
+      //       link: '/en/scrum/',
+      //     },
+      //     {
+      //       text: 'Blog',
+      //       link: 'https://webneko.dev/',
+      //     }
+      //   ],
+      //   sidebarDepth: 3,
+      //   sidebar: {
+      //     '/en/docs/': [
+      //       {
+      //         title: 'Docs',
+      //         collapsable: false,
+      //         children: [
+      //           '',
+      //           'infra',
+      //           'guide',
+      //           'community'
+      //         ]
+      //       }
+      //     ],
+      //     '/en/scrum/': [
+      //       {
+      //         title: 'Scrum',
+      //         collapsable: false,
+      //         children: [
+      //           '',
+      //           '2019-10-25'
+      //         ]
+      //       }
+      //     ]
+      //   }
+      // }
     }
   },
   locales: {
     '/': {
-      lang: 'en',
-      title: 'Neko No Esa',
-      description: 'Documents of Webneko'
-    },
-    '/jp/': {
       lang: 'jp',
       title: 'ねこのえさ',
       description: 'Web猫のドキュメント集'
     }
+    // '/en/': {
+    //   lang: 'en',
+    //   title: 'neko no esa',
+    //   description: 'Documents of WebNeko'
+    // }
   },
   configureWebpack: {
     resolve: {
