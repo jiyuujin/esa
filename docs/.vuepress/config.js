@@ -1,4 +1,5 @@
-module.exports = { // eslint no-undef: 0
+// eslint-disable-next-line no-undef
+module.exports = {
   title: 'ねこのえさ',
   description: 'Web猫のドキュメント集',
   head: [
