@@ -7,7 +7,7 @@
     "build": "vuepress build docs"
   },
   "dependencies": {
-    "@nekohack/j-stylebook": "0.2.0",
+    "@nekohack/j-stylebook": "0.2.9",
     "@nekohack/profile-component": "0.1.2",
     "apollo-cache-inmemory": "1.6.3",
     "apollo-client": "2.6.4",
