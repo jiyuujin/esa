@@ -1,14 +1,14 @@
 // eslint-disable-next-line no-undef
 module.exports = {
   title: 'ねこのえさ',
-  description: 'Web猫のドキュメント集',
+  description: 'Web猫のドキュメント',
   head: [
-    [ 'meta', { hid: 'description', name: 'description', content: 'Web猫のドキュメント集' } ],
+    [ 'meta', { hid: 'description', name: 'description', content: 'Web猫のドキュメント' } ],
     [ 'meta', { property: 'og:site_name', content: 'ねこのえさ' } ],
     [ 'meta', { property: 'og:url', content: '' } ],
     [ 'meta', { property: 'og:type', content: 'website' } ],
     [ 'meta', { property: 'og:title', content: 'ねこのえさ' } ],
-    [ 'meta', { property: 'og:description', content: 'Web猫のドキュメント集' } ],
+    [ 'meta', { property: 'og:description', content: 'Web猫のドキュメント' } ],
   ],
   base: '/',
   docsDir: 'docs',
@@ -16,13 +16,50 @@ module.exports = {
   themeConfig: {
     locales: {
       '/': {
-        repo: 'jiyuujin/esa',
+        repo: 'nekohack/esa',
         editLinks: false,
         docsDir: 'docs',
         nav: [
           {
-            text: 'ドキュメント',
-            link: '/docs/',
+            text: 'Profile',
+            link: 'https://yuukit.me/',
+          },
+          {
+            text: 'Blog',
+            link: 'https://webneko.dev/',
+          }
+        ],
+        sidebarDepth: 3,
+        sidebar: {
+          '/': [
+            {
+              title: 'All',
+              collapsable: false,
+              children: [
+                '/',
+                '/community/'
+              ]
+            }
+          ],
+          '/community/': [
+            {
+              title: 'コミュニティ',
+              collapsable: false,
+              children: [
+                '/'
+              ]
+            }
+          ]
+        }
+      },
+      '/jp/': {
+        repo: 'nekohack/esa',
+        editLinks: false,
+        docsDir: 'docs',
+        nav: [
+          {
+            text: 'プロフィール',
+            link: 'https://yuukit.me/',
           },
           {
             text: 'ブログ',
@@ -31,13 +68,22 @@ module.exports = {
         ],
         sidebarDepth: 3,
         sidebar: {
-          '/docs/': [
+          '/': [
             {
-              title: 'ドキュメント',
+              title: '概要',
               collapsable: false,
               children: [
-                '',
-                'community'
+                '/jp/',
+                '/jp/community/'
+              ]
+            }
+          ],
+          '/community/': [
+            {
+              title: 'コミュニティ',
+              collapsable: false,
+              children: [
+                '/jp/'
               ]
             }
           ]
@@ -47,9 +93,14 @@ module.exports = {
   },
   locales: {
     '/': {
+      lang: 'en',
+      title: 'esa',
+      description: 'Document cat'
+    },
+    '/jp/': {
       lang: 'jp',
       title: 'ねこのえさ',
-      description: 'Web猫のドキュメント集'
+      description: 'Web猫のドキュメント'
     }
   },
   configureWebpack: {

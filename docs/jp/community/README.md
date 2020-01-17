@@ -1,7 +1,6 @@
 # コミュニティ
 
 ## Vue
-
 - [v-kansai connpass](https://vuekansai.connpass.com/)
 - [vuejs-jp slack v-kansai / mokumoku-kansai channel](https://vuejs-jp.slack.com/)
 
@@ -21,7 +20,6 @@
 | [#1](https://webneko.dev/posts/enter-the-first-vue-js-nuxt-meetup-in-kyoto) | 2018/12/20 | [京都](https://vuekansai.connpass.com/event/110542/) | [資料一覧](https://nekohack.github.io/v-kansai/event/#v-kansai-1) | 28 / 6 | |
 
 ## TypeScript
-
 - [kansai.ts connpass](https://kansaits.connpass.com/)
 - [kansai.ts discord](https://discord.gg/AJPs2Uh)
 
@@ -31,17 +29,10 @@
 | [#2](https://webneko.dev/posts/enter-the-kansai-ts-2-in-osaka) | [大阪](https://kansaits.connpass.com/event/131541/) | 51| 46 | 10 |
 | [#1](https://webneko.dev/posts/enter-the-kansai-ts-1-in-osaka) | [大阪](https://kansaits.connpass.com/event/130120/) | 40 | - | 7 |
 
-※ 参加者は最終的にキャンセルした者を含む。また回によってはキャンセル待ちによって参加できなかった者も含む。
-
 ## React
-
-立ち上げてませんが、企画・運営に携わったので、記録しておきます。
-
 - [react.kyoto connpass](https://react-kyoto.connpass.com/)
 
 | # | 開催地 | 参加者 | 登壇者 |
 |:---|:---|:---|:---|
 | #4 | - | - | - |
 | [#3](https://webneko.dev/posts/enter-the-react-kyoto-v0-3-0) | [大阪](https://react-kyoto.connpass.com/event/137847/) | 44 | 5 |
-
-※ 参加者は最終的にキャンセルした者を含む。また回によってはキャンセル待ちによって参加できなかった者も含む。
