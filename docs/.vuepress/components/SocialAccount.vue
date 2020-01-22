@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <j-spinner :is-loading="!list"></j-spinner>
-    <ul v-for="item in list" :key="item.id" class="social">
+  <div class="social">
+    <ul v-for="item in allSocials" :key="item.id">
       <li>
         <a :href="getBaseUrl(item.service, item.username)" target="_blank" rel="noopener">
           <img :src="`/${item.service}.JPG`" :alt="item.username">
@@ -12,11 +11,17 @@
 </template>
 
 <script>
+import { fetchProfile } from '../services/profile'
+
 export default {
-  props: {
-    list: {
-      type: Array
+  data() {
+    return {
+      allSocials: null
     }
+  },
+  async mounted() {
+    const responseData = await fetchProfile()
+    this.allSocials = responseData.data.allSocials
   },
   methods: {
     getBaseUrl(service, name) {

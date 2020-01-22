@@ -2,7 +2,6 @@ language: node_js
 
 stages:
   - lint
-  - compile
 
 node_js:
   - "12"
@@ -24,10 +23,3 @@ jobs:
       script:
 #        - node_modules/eslint/bin/eslint.js docs/.vuepress/
         - npx eslint ./docs/.vuepress/ --ext vue,js
-    # Build Compile
-    - stage: "compile"
-      name: "Build Compile"
-      install:
-        - npm install
-      script:
-        - npm run build

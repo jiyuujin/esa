@@ -1,32 +1,14 @@
-/* eslint no-undef: 0 */
+// eslint-disable-next-line no-undef
 module.exports = {
   title: 'ねこのえさ',
-  description: 'Web猫のドキュメント集',
+  description: 'Web猫のドキュメント',
   head: [
-    [
-      'meta',
-      { hid: 'description', name: 'description', content: 'Web猫のドキュメント集' },
-    ],
-    [
-      'meta',
-      { property: 'og:site_name', content: 'ねこのえさ' },
-    ],
-    [
-      'meta',
-      { property: 'og:url', content: 'https://nekohack.app/' },
-    ],
-    [
-      'meta',
-      { property: 'og:type', content: 'website' },
-    ],
-    [
-      'meta',
-      { property: 'og:title', content: 'ねこのえさ' },
-    ],
-    [
-      'meta',
-      { property: 'og:description', content: 'Web猫のドキュメント集' },
-    ],
+    [ 'meta', { hid: 'description', name: 'description', content: 'Web猫のドキュメント' } ],
+    [ 'meta', { property: 'og:site_name', content: 'ねこのえさ' } ],
+    [ 'meta', { property: 'og:url', content: '' } ],
+    [ 'meta', { property: 'og:type', content: 'website' } ],
+    [ 'meta', { property: 'og:title', content: 'ねこのえさ' } ],
+    [ 'meta', { property: 'og:description', content: 'Web猫のドキュメント' } ],
   ],
   base: '/',
   docsDir: 'docs',
@@ -34,88 +16,74 @@ module.exports = {
   themeConfig: {
     locales: {
       '/': {
-        repo: 'jiyuujin/esa',
+        repo: 'nekohack/esa',
         editLinks: false,
         docsDir: 'docs',
         nav: [
           {
-            text: 'Document',
-            link: '/docs/',
+            text: 'Profile',
+            link: 'https://yuukit.me/',
           },
           {
-            text: 'Scrum',
-            link: '/scrum/',
-          },
-          {
-            text: 'Webneko Blog',
+            text: 'Blog',
             link: 'https://webneko.dev/',
           }
         ],
         sidebarDepth: 3,
         sidebar: {
-          '/docs/': [
+          '/': [
             {
-              title: 'Document',
+              title: 'All',
               collapsable: false,
               children: [
-                '',
-                'infra',
-                'guide',
-                'community'
+                '/',
+                '/community/'
               ]
             }
           ],
-          '/scrum/': [
+          '/community/': [
             {
-              title: 'Scrum',
+              title: 'コミュニティ',
               collapsable: false,
               children: [
-                '',
-                '2019-10-25'
+                '/'
               ]
             }
           ]
         }
       },
       '/jp/': {
-        repo: 'jiyuujin/esa',
+        repo: 'nekohack/esa',
         editLinks: false,
         docsDir: 'docs',
         nav: [
           {
-            text: 'ドキュメント',
-            link: '/jp/docs/',
+            text: 'プロフィール',
+            link: 'https://yuukit.me/',
           },
           {
-            text: 'スクラム',
-            link: '/jp/scrum/',
-          },
-          {
-            text: 'Web猫ブログ',
+            text: 'ブログ',
             link: 'https://webneko.dev/',
           }
         ],
         sidebarDepth: 3,
         sidebar: {
-          '/jp/docs/': [
+          '/': [
             {
-              title: 'ドキュメント',
+              title: '概要',
               collapsable: false,
               children: [
-                '',
-                'infra',
-                'guide',
-                'community'
+                '/jp/',
+                '/jp/community/'
               ]
             }
           ],
-          '/jp/scrum/': [
+          '/community/': [
             {
-              title: 'スクラム',
+              title: 'コミュニティ',
               collapsable: false,
               children: [
-                '',
-                '2019-10-25'
+                '/jp/'
               ]
             }
           ]
@@ -126,13 +94,13 @@ module.exports = {
   locales: {
     '/': {
       lang: 'en',
-      title: 'Neko No Esa',
-      description: 'Documents of Webneko'
+      title: 'esa',
+      description: 'Document cat'
     },
     '/jp/': {
       lang: 'jp',
       title: 'ねこのえさ',
-      description: 'Web猫のドキュメント集'
+      description: 'Web猫のドキュメント'
     }
   },
   configureWebpack: {
