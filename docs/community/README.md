@@ -6,7 +6,9 @@
 
 | # | Date | Event Page | Docs | Participants (maybe) / LT | Others |
 |:---|:---|:---|:---|:---|:---|
-| #12 | 2019/12/06 | [Kyoto](https://vuekansai.connpass.com/event/153925/) | | 20 / 6 | |
+| #14 | 2020/03/06 | [Kyoto](https://vuekansai.connpass.com/event/165408/) | | 30 / 6 | |
+| #13 | 2020/01/15 | [Osaka](https://vuekansai.connpass.com/event/158588/) | | 15 / 6 | |
+| [#12](https://webneko.dev/posts/enter-the-final-v-kansai-in-2019) | 2019/12/06 | [Kyoto](https://vuekansai.connpass.com/event/153925/) | | 20 / 6 | |
 | [#11](https://webneko.dev/posts/enter-the-v-kansai-11-with-kyoto-dev-cafe) | 2019/10/09 | [Kyoto](https://vuekansai.connpass.com/event/144194/) | [Docs](https://nekohack.github.io/v-kansai/event/#v-kansai-11) | 26 / 5 | |
 | [#10](https://webneko.dev/posts/enter-the-v-kansai-10-in-osaka) | 2019/09/18 | [Osaka](https://vuekansai.connpass.com/event/143861/) | [Docs](https://nekohack.github.io/v-kansai/event/#v-kansai-10) | 20 / 6 | |
 | [#9](https://webneko.dev/posts/enter-the-v-kansai-9-with-fjug-osaka) | 2019/08/21 | [Kyoto](https://vuekansai.connpass.com/event/137411/) | [Docs](https://nekohack.github.io/v-kansai/event/#v-kansai-9) | 38 / 9 | |
@@ -25,7 +27,7 @@
 
 | # | Location | 枠 | Participants | LT |
 |:---|:---|:---|:---|:---|
-| #3 | - | - | - | - |
+| #3 | [Osaka](https://kansaits.connpass.com/event/147686/) | 50 | - | 10 |
 | [#2](https://webneko.dev/posts/enter-the-kansai-ts-2-in-osaka) | [Osaka](https://kansaits.connpass.com/event/131541/) | 51| 46 | 10 |
 | [#1](https://webneko.dev/posts/enter-the-kansai-ts-1-in-osaka) | [Osaka](https://kansaits.connpass.com/event/130120/) | 40 | - | 7 |
 
