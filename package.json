@@ -11,6 +11,6 @@
   },
   "devDependencies": {
     "eslint": "6.5.1",
-    "eslint-plugin-vue": "6.1.2"
+    "eslint-plugin-vue": "6.2.1"
   }
 }
